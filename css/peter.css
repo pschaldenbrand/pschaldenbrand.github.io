@@ -1,0 +1,147 @@
+body {
+	min-width: 1000px;
+	min-height: 700px;
+	font-size: 1em;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+    color: #FFF;
+    background-color: hsl(214, 32%, 22%);
+
+    margin: 0px 0px;
+}
+
+@font-face {
+    font-family: camp;
+    src: url(../fonts/AmaticSC.woff);
+}
+
+canvas.background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	left: 0px;
+	top: 0px;
+	background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,.4));
+}
+
+.infoContainer {
+	margin-top: 10%;
+	height: 60%;
+	text-align: center;
+	text-shadow: 0px 0px 20px black;
+	text-transform: uppercase;
+	margin-left: 20%;
+	width: 60%;
+}
+.infoContainer > div, .infoContainer > table{
+	//margin-left: 20%;
+	//width: 60%;
+	max-width: 750px;
+	margin: auto auto;
+}
+.infoButtons {
+}
+
+.name {
+	width: 100%;
+	font-size: 2.5em;
+	margin-bottom: 10px;
+}
+
+.subTitle {
+	margin: 5px 0px;
+	font-size:.9em;
+}
+
+.infoContainer > .externalLinks {
+	position:absolute;
+	bottom: 20px;
+	width:100%;
+	margin-left: 0%;
+	min-width: 1000px
+}
+
+.links {
+	margin-top: 40px;
+	width:100%;
+}
+.linkDivider td {
+	width:25%;
+	text-align: center;
+}
+
+.linkButton {
+	float: center;
+	width:100px; 
+	font-size:12px;
+	//background-color: #141414;
+	background-color: rgba(0,0,0,0);
+	display: inline-block;
+	text-decoration: none;
+    padding: 10px 0px;
+	text-align:center;
+	border-style:solid;
+	border-width: 1px;
+	border-color: white;
+	color:#FFFFFF;
+	cursor: pointer;
+}
+.linkButton:hover {
+	transition: all 800ms ease-in-out;
+	background-color: rgba(35,35,35,.85);
+}
+
+.infoContainer > .dropdownInformation {
+	//margin-top:10px;
+	width: 75%;
+	max-width: 850px;
+	//margin-left: 20%;
+	text-align: left;
+}
+.dropdown {
+	text-transform: uppercase;
+	display: none;
+}
+.dropdownTitle {
+	font-size: 20px;
+	margin-top:15px;
+	margin-bottom: 3px;
+}
+.dropdownSubtitle {
+	font-size: 16px;
+	padding-left: 48px;
+	margin-top: 5px;
+	margin-bottom: 2px;
+}
+.dropdown p {
+	font-size: 14px;
+	padding-left: 96px;
+	margin: 1px 0px;
+}
+.musicContainer {
+	text-align:center;
+	padding-right:30%;
+}
+.musicContainer > p {
+	margin-top: 3px;
+}
+
+.acknowledgement {
+	position: absolute;
+	bottom: 2%;
+	right: 2%;
+	width: 200px;
+	font-size: 12px;
+	display: none;
+	text-transform: lowercase;
+}
+#cornerPlus {
+	color:white;
+	font-size:25px;
+	position:absolute;
+	bottom: 0%;
+	right: 0%;
+	padding: 40px 40px;
+	cursor: pointer;
+}
