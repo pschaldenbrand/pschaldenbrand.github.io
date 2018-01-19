@@ -1,5 +1,5 @@
 body {
-	min-width: 1000px;
+	min-width: 800px;
 	min-height: 700px;
 	font-size: 1em;
 	font-family: sans-serif;
@@ -92,6 +92,10 @@ canvas.background {
 	background-color: rgba(35,35,35,.85);
 }
 
+.nonButtonLink { 
+	color: white;
+}
+
 .infoContainer > .dropdownInformation {
 	//margin-top:10px;
 	width: 75%;
@@ -134,7 +138,7 @@ canvas.background {
 	width: 200px;
 	font-size: 12px;
 	display: none;
-	text-transform: lowercase;
+	text-transform: none;
 }
 #cornerPlus {
 	color:white;
