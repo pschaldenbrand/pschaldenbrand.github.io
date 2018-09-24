@@ -32,24 +32,28 @@
 		<div class="infoButtons">
 			<table class="links"><tr class="linkDivider">
 				<td>
-					<div class="linkButton" 
-							onclick='openDropdown("#experience");'>
+					<div class="linkButton" id="experienceButton" onclick='openDropdown("#experience");'>
 						EXPERIENCE
 					</div>
 				</td>
 				<td>
-					<div class="linkButton" onclick='openDropdown("#skills");'>
+					<div class="linkButton" id="educationButton" onclick='openDropdown("#education");'>
+						EDUCATION
+					</div>
+				</td>
+				<td>
+					<div class="linkButton" id="skillsButton" onclick='openDropdown("#skills");'>
 						SKILLS
 					</div>
 				</td>
 				<td>
-					<div class="linkButton"onclick='openDropdown("#personal");'>
+					<div class="linkButton" id="personalButton" onclick='openDropdown("#personal");'>
 						PERSONAL
 					</div>
 				</td>
 				<td>
 					<!--<a class="linkButton" href="mailto:pschalde@cs.cmu.edu" >CONTACT</a>-->
-					<div class="linkButton"onclick='openDropdown("#contact");'>
+					<div class="linkButton" id="contactButton" onclick='openDropdown("#contact");'>
 						CONTACT
 					</div>
 				</td>
@@ -67,16 +71,33 @@
 				<p>
 					<a href="https://pslcdatashop.web.cmu.edu/LearnSphere" target="_blank" style="color:white">Learnsphere Tigris</a>
 				</p>
-				<div class="dropdownSubtitle">M.S. MACHINE LEARNING (2017-PRESENT)</div>
+
+				<div class="dropdownTitle">Research</div>
+				<div class="dropdownSubtitle">Is the Doer Effect Robust Across Multiple Data Sets?</div>
+					<p><a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank" style="color:white;font-size:0.9em">
+						11th Conf. on Education Data Mining
+					</a></p>
+				
+				<div class="dropdownSubtitle">Real Time Learning Analytics for Intelligent Tutoring Systems</div>
+					<span style="text-decoration:underline;cursor: pointer">
+						<p onclick='displayImg("images/itsLearningAnalytics.png")'>Poster</p>
+					</span>
+
+				<div class="dropdownSubtitle">Deep Learning for Music Generation</div>
+					<span style="text-decoration:underline;cursor: pointer">
+						<p onclick='displayPdf("resources/MusicGenerationSchaldenbrand.pdf")'>Paper</p>
+						<p onclick='displayPdf("resources/TeamRadTunes_Poster.pdf")'>Poster</p>
+					</span>
 
 				<div class="dropdownTitle">Web Development</div>
-				<div class="dropdownSubtitle" style="display:inline"> 
-					<p style="display:inline;padding-left:5px"><a class="" href="https://www.heinzhealey.com" target="_blank" style="color:white">www.HeinzHealey.com</a></p>
+				<div class="dropdownSubtitle"> 
+					<p style="padding-left:5px"><a class="" href="https://www.heinzhealey.com" target="_blank" style="color:white">www.HeinzHealey.com</a></p>
 				</div>
+				<div class="dropdownSubtitle"> 
+					<p style="padding-left:5px;"><a class="" href="https://github.com/pschaldenbrand/pschaldenbrand.github.io" target="_blank" style="color:white">This Site</a></p>
+				</div>
+				
 
-				<div class="dropdownTitle">The University of Pittsburgh</div>
-				<div class="dropdownSubtitle">B.S. Computer Science 2017</div>
-				<p>GPA: 3.9</p>
 				<a class="linkButton" style="margin-left:35%"
 						href="https://www.linkedin.com/in/pschaldenbrand" target="_blank">LINKEDIN</a>
 
@@ -87,19 +108,38 @@
 				<div class="dropdownSubtitle">Java | JavaScript | JQuery | Machine Learning | Causal Analysis</div>
 				
 				<div class="dropdownTitle">Experienced</div>
-				<div class="dropdownSubtitle">Python | Matlab | SQL | PHP | Organic Chemistry</div>
+				<div class="dropdownSubtitle">Python | Matlab | SQL | PHP | R | Organic Chemistry</div>
 
 				<div class="dropdownTitle">Technologies</div>
 				<div class="dropdownSubtitle">OpenCV | Eclipse | SciPy | Weka | Tetrad | Linux</div>
 
-				<a class="linkButton" style="margin-left:30%;width:200px;margin-top:15px"
-						href="https://www.youtube.com/watch?v=KYsRQPAPmDU&t=0s" target="_blank">YOUTUBE Portfolio</a>
+				<!--<a class="linkButton" style="margin-left:30%;width:200px;margin-top:15px"
+						href="https://www.youtube.com/watch?v=KYsRQPAPmDU&t=0s" target="_blank">YOUTUBE Portfolio</a>-->
 			</div>
+
+			<div class="dropdown" id="education">
+				<div class="dropdownTitle">Carnegie Mellon University</div>
+				<div class="dropdownSubtitle">M.S. MACHINE LEARNING (2017-PRESENT)</div>
+				<p>GPA: 4.0</p>
+
+				<div class="dropdownTitle">The University of Pittsburgh</div>
+				<div class="dropdownSubtitle">B.S. Computer Science 2017</div>
+				<p>GPA: 3.9</p>
+				
+			</div>
+
+			<div class="dropdown" id="contact" style="text-align:center">
+				<div class="dropdownSubtitle" style="height:30px"> </div>
+				<div class="dropdownSubtitle" >pschalde at cs dot cmu dot edu</div>
+			</div>
+
+		
 
 			<div class="dropdown" id="personal">
 				<div class="dropdownTitle">Volunteer</div>
 				<div class="dropdownSubtitle">Muscular Dystrophy Association</div>
-				<p>Councelor and unit leader at MDA's summer camp for children with muscular diseases.</p>
+				<p>Councelor and unit leader at MDA's summer camp for children with muscular diseases</p>
+				<p>(2012-Present)</p>
 
 				<div class="dropdownTitle">Action</div>
 				<div class="dropdownSubtitle">Volleyball</div>
@@ -107,13 +147,13 @@
 				<p>Currently assisting coach at Central Catholic High School</p>
 
 				<div class="dropdownTitle">Music</div>
-				<div class="dropdownSubtitle" style="font-size:14px">Moderately decent multiple instruments including guitar, saxophone, bagpipes</div>
+				<div class="dropdownSubtitle" style="font-size:14px">Guitar, Saxophone, Bagpipes, Synthesizer in what small free time I find</div>
 				<div class="dropdownSubtitle">
 					<!--<p><a class="linkButton" href="https://www.youtube.com/watch?v=bq_awhCgWFE" target="_blank" style="width:480px">Wrote/performed music for talented friend's short film</a></p>
 					<p><a class="linkButton" href="https://www.youtube.com/channel/UChYKmkOqEhckVDZO2ZuRunw" target="_blank" style="width:350px">Personal Youtube channel for music</a></p>-->
 				</div>
-				<p><a class="nonButtonLink" href="https://www.youtube.com/watch?v=bq_awhCgWFE" target="_blank" style="width:480px">Composition: Short Film</a></p>
-				<p><a class="nonButtonLink" href="https://www.youtube.com/channel/UChYKmkOqEhckVDZO2ZuRunw" target="_blank" style="width:350px">Ordinature</a></p>
+				<p><a class="nonButtonLink" href="https://www.youtube.com/watch?v=bq_awhCgWFE" target="_blank" style="width:480px;color:white">Composition: Short Film</a></p>
+				<p><a class="nonButtonLink" href="https://www.youtube.com/channel/UChYKmkOqEhckVDZO2ZuRunw" target="_blank" style="width:350px;color:white">Ordinature</a></p>
 				
 			</div>
 

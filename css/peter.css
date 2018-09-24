@@ -92,6 +92,10 @@ canvas.background {
 	background-color: rgba(35,35,35,.85);
 }
 
+.clicked {
+	background-color: rgba(35,35,35,.85);
+}
+
 .nonButtonLink { 
 	color: white;
 }
@@ -149,3 +153,31 @@ canvas.background {
 	padding: 40px 40px;
 	cursor: pointer;
 }
+
+.pdfPopout {
+	    position: absolute;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    border: grey solid 4px;
+    border-radius: 5px;
+}
+
+.exitPdf {
+	position: absolute;
+	right: 5%;
+	top: 15%;
+	opacity: 0.9;
+	cursor: pointer;
+}
+.exitPdf img {
+	width: 30px;
+}
+
+.exitPdf img:hover {
+	opacity: 1;
+	transition: all 500ms ease;
+	transform:scale(1.3);
+}
+
