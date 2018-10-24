@@ -62,6 +62,8 @@ function displayPdf(path) {
     jQuery('body').append('<iframe class="pdfPopout" src="' + path + '"></iframe>');
     jQuery('body').append('<div class="exitPdf"><img src="images/WhiteX.png"></div>');
 
+    jQuery('.pdfPopout, .exitPdf').animate({'opacity':'1'}, 500);
+
     jQuery('.exitPdf').click(function() {
         jQuery('.pdfPopout, .exitPdf').remove();
     });
@@ -70,6 +72,8 @@ function displayPdf(path) {
 function displayImg(path) {
     jQuery('body').append('<img class="pdfPopout" src="' + path + '">');
     jQuery('body').append('<div class="exitPdf"><img src="images/WhiteX.png"></div>');
+
+    jQuery('.pdfPopout, .exitPdf').animate({'opacity':'1'}, 500);
 
     jQuery('.exitPdf').click(function() {
         jQuery('.pdfPopout, .exitPdf').remove();

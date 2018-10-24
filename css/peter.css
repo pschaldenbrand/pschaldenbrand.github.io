@@ -155,20 +155,21 @@ canvas.background {
 }
 
 .pdfPopout {
-	    position: absolute;
+    position: absolute;
     width: 80%;
     top: 10%;
     left: 10%;
     height: 80%;
     border: grey solid 4px;
     border-radius: 5px;
+    opacity: 0;
 }
 
 .exitPdf {
 	position: absolute;
 	right: 5%;
 	top: 15%;
-	opacity: 0.9;
+	opacity: 0;
 	cursor: pointer;
 }
 .exitPdf img {
