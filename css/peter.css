@@ -1,6 +1,6 @@
 body {
-	min-width: 800px;
-	min-height: 700px;
+	/*min-width: 800px;
+	min-height: 700px;*/
 	letter-spacing: 1px;
     color: #FFF !important;
     text-shadow: 0px 0px 20px #000 !important;
@@ -54,7 +54,7 @@ canvas.background {
     color: #fff !important;
 }
 
-#projects .row {
+#projects .row, #publications .row {
     margin-bottom: 1em;
 }
 
@@ -75,6 +75,12 @@ canvas.background {
 .linkButton:hover {
 	transition: all 800ms ease-in-out;
 	background-color: rgba(35,35,35,.85);
+}
+@media (max-width: 900px) {
+    .linkButton  {
+        width: 9em;
+        margin-bottom: 0.5em;
+    }
 }
 
 .clicked {
