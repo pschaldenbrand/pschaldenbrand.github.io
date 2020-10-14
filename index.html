@@ -2,6 +2,7 @@
 
 <head>
 	<link rel="stylesheet" href="css/peter.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<script src="js/lib/jquery-1.7.1.min.js"></script>
 	<script src="js/peter.js"></script>
 	<title>Peter Schaldenbrand</title>
@@ -19,193 +20,303 @@
 </head>
 
 <body>
-	<canvas id="backgroundCanvas" class="background">
-		
-	</canvas>
+	<canvas id="backgroundCanvas" class="background"></canvas>
 
-	<div class="infoContainer">
-		<div class="name">Peter Schaldenbrand</div>
+	<div class="description">
+		<h1>Peter Schaldenbrand</h1>
 
-		<div class="subTitle" >Research Programmer | <span style="margin-left:0em">Machine Learning Graduate Student</span> </div>
-		<div class="subTitle"> Carnegie Mellon University</div>
+		<div>Research Programmer | <span style="margin-left:0em">Machine Learning Graduate Student</span> </div>
+		<div>Carnegie Mellon University</div>
+        <div>pschalde at cs dot cmu dot edu</div>
 
-		<div class="infoButtons">
-			<table class="links"><tr class="linkDivider">
-				<td>
-					<div class="linkButton" id="experienceButton" onclick='openDropdown("#experience");'>
-						EXPERIENCE
-					</div>
-				</td>
-				<td>
-					<div class="linkButton" id="educationButton" onclick='openDropdown("#education");'>
-						EDUCATION
-					</div>
-				</td>
-				<td>
-					<div class="linkButton" id="skillsButton" onclick='openDropdown("#skills");'>
-						SKILLS
-					</div>
-				</td>
-				<td>
-					<div class="linkButton" id="personalButton" onclick='openDropdown("#personal");'>
-						PERSONAL
-					</div>
-				</td>
-				<td>
-					<!--<a class="linkButton" href="mailto:pschalde@cs.cmu.edu" >CONTACT</a>-->
-					<div class="linkButton" id="contactButton" onclick='openDropdown("#contact");'>
-						CONTACT
-					</div>
-				</td>
-			</tr></table>
+        <p />
+
+		<div class="info-buttons">
+            <div class="linkButton" id="aboutButton" onclick='openDropdown("#about");'>
+                ABOUT
+            </div>
+            <div class="linkButton" id="publicationsButton" onclick='openDropdown("#publications");'>
+                PUBLICATIONS
+            </div>
+            <div class="linkButton" id="projectsButton" onclick='openDropdown("#projects");'>
+                PROJECTS
+            </div>
+			<div class="linkButton" id="experienceButton" onclick='openDropdown("#experience");'>
+				EXPERIENCE
+			</div>
+            <div class="linkButton" id="educationButton" onclick='openDropdown("#education");'>
+                EDUCATION
+            </div>
+			<div class="linkButton" id="personalButton" onclick='openDropdown("#personal");'>
+				PERSONAL
+			</div>
+		</div>
+    </div>
+
+    <div class="container-fluid col-sm-10 col-lg-9">
+        <div class="peter-section col-lg-12" id="publications">
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/coolin_painted.gif" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Machine Traditional Animation: AniPainter</h3>
+                    <div>[Under Review] NeurIPS 2020 Machine Learning for Creativity and Design Workshop</div>
+                    <a onclick='displayPdf("resources/Robot_Animator.pdf")'>Paper</a>
+                    <a href="https://github.com/pschaldenbrand/AniPainter" target="_blank">Website</a>
+                    <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
+                    <div>Using a robot arm to "hand" paint animation frames.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/ours_vs_baseline.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Content Masked Loss: Human-Like Brush Stroke Planning in a Reinforcement Learning Painting Agent.</h3>
+                    <div>[Under Review] 35th AAAI Conf. on Artificial Intelligence</div>
+                    <a onclick='displayPdf("resources/Content_Masked_Loss.pdf")'>Paper</a>
+                    <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
+                    <div>Novel approach to increasing the human-like planning of a reinforcement learning model.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/doer_effect.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Is the Doer Effect Robust Across Multiple Data Sets?</h3>
+                    <div>11th Conf. on Education Data Mining</div>
+                    <!--<a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank">Paper</a>-->
+                    <a onclick='displayPdf("resources/EDM2018_paper_129.pdf")'>Paper</a>
+                    <div><a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a>, <a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, and Peter Schaldenbrand</div>
+                    <div>Establishing the causal effect between active resources in an educational environment and learning.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/tetrad_learnsphere.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Workshop: Causal Discovery with Tetrad in LearnSphere’s Tigris</h3>
+                    <div>12th Conf. on Education Data Mining</div>
+                    <a onclick='displayPdf("resources/EDM_2019_paper_4.pdf")'>Paper</a>
+                    <div><a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, Peter Schaldenbrand, and <a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a></div>
+                </div>
+            </div>
+        </div>
+
+		<div class="peter-section col-lg-12" id="projects">
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/robot_painting.gif" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Robot Painter</h3>
+                    <a onclick='displayPdf("resources/Robot_Painting.pdf")'>Paper</a>
+                    <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
+                    <div>An affordable robot that can paint.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/midi2wav_results.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3><span style="font-family:monospace;">wav2midi</span>: An Unsupervised Music Format Translation Model</h3>
+                    <a onclick='displayPdf("resources/wav2midi.pdf")'>Paper</a>
+                    <div>Peter Schaldenbrand and Husni Almoubayyed</div>
+                    <div>Convert arbitrary waveform audio music into MIDI format.  Trained without paired wav-midi examples.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/styled_video.gif" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Video Style Transfer</h3>
+                    <a href="https://github.com/pschaldenbrand/STROTSS-Video" target="_blank">Website</a>
+                    <div>Video style transfer using Style Transfer by Relaxed Optimal Transport and Self-Similarity.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/causal_model.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Non-Differentiable, Parametric Model Optimization via Causal Discovery</h3>
+                    <a onclick='displayPdf("resources/Causal_Discovery_Optimization.pdf")'>Paper</a>
+                    <div>[In Progress] Optimize the parameters of a model using causal discovery algorithms. Allows for non-differentiable activation functions in the model.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/tomato_rendered.jpg" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>PyPainterly</h3>
+                    <a href="https://github.com/pschaldenbrand/PyPainterly" target="_blank">Website</a>
+                    <div>Aaron Hertzmann's algorithm for stroke-based rendering in Python.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/2dConvOverSpectrogram.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Music Genre Classification Using Deep Learning Techniques</h3>
+                    <a onclick='displayPdf("resources/10707_Final_Paper.pdf")'>Paper</a>
+                    <div>Peter Schaldenbrand and Yizhou He</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/lstm_music.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Deep Learning for Music Generation</h3>
+                    <a onclick='displayPdf("resources/MusicGenerationSchaldenbrand.pdf")'>Paper</a>
+                    <a onclick='displayPdf("resources/TeamRadTunes_Poster.pdf")'>Poster</a>
+                    <div>Peter Schaldenbrand, Husni Almoubayyed, and Yizhou He</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/itsLearningAnalytics.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Real Time Learning Analytics for Intelligent Tutoring Systems</h3>
+                    <a onclick='displayImg("images/itsLearningAnalytics.png")'>Poster</a>
+                    <div>Kenneth Holstein, Zac Yu, Octav Popescu, Jonathan Sewall, Peter Schaldenbrand, Bruce M. McLaren, and Vincent Aleven</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/contamination.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>A Deep Dive into Water Contamination</h3>
+                    <div>Citadel - The Data Open 2018</div>
+                    <a onclick='displayPdf("resources/dataThon18.html")'>Paper</a>
+                    <div>Peter Schaldenbrand, Husni Almoubayyed, Zecong Hu, and Xinyi Ju</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/anonimage.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>AnonImage</h3>
+                    <a href="https://github.com/pschaldenbrand/AnonImage" target="_blank">Website</a>
+                    <div>In light of recent protests: Anonymize photographs by erasing humans from them.</div>
+                </div>
+            </div>
+			<!--<div class="dropdownSubtitle">
+				<p style="padding-left:5px"><a class="" href="https://www.heinzhealey.com" target="_blank" style="color:white">www.HeinzHealey.com</a></p>
+			</div>-->
+
+			<a class="linkButton" style="margin-left:35%;margin-bottom:10%;"
+					href="https://www.linkedin.com/in/pschaldenbrand" target="_blank">LINKEDIN</a>
+
 		</div>
 
-		<div class="dropdownInformation">
-			<div class="dropdown" id="experience">
-				<div class="dropdownTitle">CARNEGIE MELLON UNIVERSITY<br/>
-					<span style="font-size:16px">HUMAN-COMPUTER INTERACTION INSTITUTE</span></div>
-                <div class="dropdownSubtitle">LEAD DEVELOPER (2019-Present)</div>
-                <p>
-                    <a href="http://www.cs.cmu.edu/~pl2" target="_blank" style="color:white">Personalized Learning &sup2;</a>
-                </p>
-				<div class="dropdownSubtitle">RESEARCH PROGRAMMER / Analyst (2016-Present)</div>
-				<p>
-					<a href="https://pslcdatashop.web.cmu.edu/" target="_blank" style="color:white">DataShop</a>
-				</p>
-				<p>
-					<a href="https://pslcdatashop.web.cmu.edu/LearnSphere" target="_blank" style="color:white">Learnsphere Tigris</a>
-				</p>
-
-				<div class="dropdownTitle">Research</div>
-                <div class="dropdownSubtitle">Robot Painter</div>
-                    <span style="text-decoration:underline;cursor: pointer">
-                        <p onclick='displayPdf("resources/Robot_Painting.pdf")'>Paper</p>
-                    </span>
-				<div class="dropdownSubtitle">Is the Doer Effect Robust Across Multiple Data Sets?</div>
-					<p><a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank" style="color:white;font-size:0.9em">
-						11th Conf. on Education Data Mining
-					</a></p>
-					<!--<span style="text-decoration:underline;cursor: pointer">
-						<p onclick='displayPdf("http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf")'>11th Conf. on Education Data Mining</p>
-					</span>-->
-                <div class="dropdownSubtitle">wav2midi</div>
-                    <span style="text-decoration:underline;cursor: pointer">
-                        <p onclick='displayPdf("resources/wav2midi.pdf")'>Paper</p>
-                    </span>
-                <div class="dropdownSubtitle">Non-Differentiable, Parametric Model Optimization via Causal Discovery</div>
-                    <span style="text-decoration:underline;cursor: pointer">
-                        <p onclick='displayPdf("resources/Causal_Discovery_Optimization.pdf")'>Paper</p>
-                    </span>
-                <div class="dropdownSubtitle">Workshop: Causal Discovery with Tetrad in LearnSphere’s Tigris</div>
-                    <span style="text-decoration:underline;cursor: pointer">
-                        <p onclick='displayPdf("resources/EDM_2019_paper_4.pdf")'>12th Conf. on Education Data Mining</p>
-                    </span>
-                <div class="dropdownSubtitle">Music Genre Classification Using Deep Learning Techniques</div>
-                    <span style="text-decoration:underline;cursor: pointer">
-                        <p onclick='displayPdf("resources/10707_Final_Paper.pdf")'>Paper</p>
-                    </span>
-				
-				<div class="dropdownSubtitle">Real Time Learning Analytics for Intelligent Tutoring Systems</div>
-					<span style="text-decoration:underline;cursor: pointer">
-						<p onclick='displayImg("images/itsLearningAnalytics.png")'>Poster</p>
-					</span>
-
-				<div class="dropdownSubtitle">Deep Learning for Music Generation</div>
-					<span style="text-decoration:underline;cursor: pointer">
-						<p onclick='displayPdf("resources/MusicGenerationSchaldenbrand.pdf")'>Paper</p>
-						<p onclick='displayPdf("resources/TeamRadTunes_Poster.pdf")'>Poster</p>
-					</span>
-
-				<div class="dropdownSubtitle">A Deep Dive into Water Contamination</div>
-					<span style="text-decoration:underline;cursor: pointer">
-						<p onclick='displayPdf("resources/dataThon18.html")'>Citadel - The Data Open</p>
-					</span>
-
-				<div class="dropdownTitle">Web Development</div>
-				<!--<div class="dropdownSubtitle"> 
-					<p style="padding-left:5px"><a class="" href="https://www.heinzhealey.com" target="_blank" style="color:white">www.HeinzHealey.com</a></p>
-				</div>-->
-                <div class="dropdownSubtitle"> 
-                    <p style="padding-left:5px;"><a class="" href="https://github.com/pschaldenbrand/AnonImage" target="_blank" style="color:white">AnonImage</a></p>
+		<div class="peter-section" id="about">
+            <div class="row">
+                <div class="col-sm-0 col-lg-1"></div>
+                <div class=" col-sm-12 col-lg-10">
+                    I am a graduate student and technical staff member of Carnegie Mellon University's Human-Computer Interaction Institute.
+                    <div class="ml-4">
+                        <div class="mt-4">
+                            At work, my goal is to address the opportunity gap that marginalized students face by creating technologies that make teaching and mentoring more effective and efficient.
+                        </div>
+                        <div class="mt-2">
+                            At school, I study machine learning, computer vision, and robotics to aid my research.
+                        </div>
+                        <div class="mt-2">
+                            In research, I am interested in making machine learning models that are capable of performing creative tasks such as image generation, painting, and video creation.
+                        </div>
+                    </div>
                 </div>
-				<div class="dropdownSubtitle"> 
-					<p style="padding-left:5px;"><a class="" href="https://github.com/pschaldenbrand/pschaldenbrand.github.io" target="_blank" style="color:white">This Site</a></p>
-				</div>
-				
+            </div>
+		</div>
 
-				<a class="linkButton" style="margin-left:35%;margin-bottom:10%;"
-						href="https://www.linkedin.com/in/pschaldenbrand" target="_blank">LINKEDIN</a>
+		<div class="peter-section col-lg-12" id="experience">
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <h4 class="mb-2">Research Programmer / Analyst</h4>
+                    <h5 class="subheading mb-3">Carnegie Mellon University <br/> Human-Computer Interaction Institute</h5>
 
-			</div>
+                </div>
+                <div class="col-sm-3">2017-Present</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div>
+                        <a href="http://www.cs.cmu.edu/~pl2" target="_blank">Personalized Learning&sup2;</a>
+                        <div>
+                            Full-stack, lead developer on the Personalized Learning&sup2; project; addressing the opportunity gap for marginalized students.  Created an interface for teachers and mentors at public schools in the Pittsburgh region to view data from their students’ usage of multiple Math tutoring software and access resources to intervene on students’ motivational and cognitive obstacles.  Gave input on the designing of the tool and managed multiple design interns throughout its development process.
+                        </div>
+                    </div>
 
-			<div class="dropdown" id="skills">
-				<div class="dropdownTitle">Proficient</div>
-				<div class="dropdownSubtitle">Java | JavaScript | PyTorch | Machine Learning | Causal Analysis</div>
-				
-				<div class="dropdownTitle">Experienced</div>
-				<div class="dropdownSubtitle">TensorFlow | Matlab | SQL | PHP | R </div>
+                    <div class="mt-2">
+                        <a href="https://pslcdatashop.web.cmu.edu/LearnSphere" target="_blank">Learnsphere Tigris</a>
+                        <div>
+                            Contributed improvements in full stack development to LearnSphere’s Tigris: An online workflow tool for analyzing, visualizing, and mining educational data
+                        </div>
+                    </div>
 
-				<div class="dropdownTitle">Technologies</div>
-				<div class="dropdownSubtitle"> Eclipse | Weka | Tetrad | Linux | Video Editing</div>
+                    <div class="mt-2">
+                        Presented and taught at workshops and CMU courses.  Created videos to teach the software tools I contributed to.
+                    </div>
+                </div>
+            </div>
+        </div>
 
-				<!--<a class="linkButton" style="margin-left:30%;width:200px;margin-top:15px"
-						href="https://www.youtube.com/watch?v=KYsRQPAPmDU&t=0s" target="_blank">YOUTUBE Portfolio</a>-->
-			</div>
+        <div class="peter-section col-lg-12" id="education">
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <h4 class="mb-2">Carnegie Mellon University <br/> Language Technologies Institute</h4>
+                    <h5 class="subheading mb-2">Master of Computational Data Science - Analytics</h5>
+                    <div>GPA: 3.8</div>
+                </div>
 
-			<div class="dropdown" id="education">
-				<div class="dropdownTitle">Carnegie Mellon University</div>
-				<div class="dropdownSubtitle">MASTER OF COMPUTATIONAL DATA SCIENCE - ANALYTICS (MAY 2021)</div>
-				<p>GPA: 3.8</p>
+                <div class="col-sm-3">2020-MAY 2021</div>
+            </div>
 
-				<div class="dropdownTitle">The University of Pittsburgh</div>
-				<div class="dropdownSubtitle">B.S. Computer Science 2017</div>
-				<p>GPA: 3.9</p>
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <h4 class="mb-2">The University of Pittsburgh</h4>
+                    <h5 class="subheading mb-2">Bachelor of Science: Computer Science</h5>
+                    <div>GPA: 3.9</div>
+                </div>
 
-                <div class="dropdownTitle">Central Catholic High School</div>
-				
-			</div>
+                <div class="col-sm-3">2013-2017</div>
+            </div>
 
-			<div class="dropdown" id="contact" style="text-align:center">
-				<div class="dropdownSubtitle" style="height:30px"> </div>
-				<div class="dropdownSubtitle" >pschalde at cs dot cmu dot edu</div>
-			</div>
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <h4 class="mb-2">Central Catholic High School</h4>
+                    <h5 class="subheading mb-2">Pittsburgh, PA</h5>
+                </div>
 
-		
+                <div class="col-sm-3">2009-2013</div>
+            </div>
+		</div>
 
-			<div class="dropdown" id="personal">
-				<div class="dropdownTitle">Volunteer</div>
-				<div class="dropdownSubtitle">Muscular Dystrophy Association</div>
-				<p>Councelor and unit leader at MDA's summer camp for children with muscular diseases</p>
-				<p>(2012-Present)</p>
 
-				<div class="dropdownTitle">Action</div>
-				<div class="dropdownSubtitle">Volleyball</div>
-				<p>High school and college experience </p>
-				<p>Currently assisting coach at Central Catholic High School</p>
-                <div class="dropdownSubtitle">Cycling</div>
-                <p>You'll catch me outside on my bike as soon as the warm weather hits.  I use it to find the best rock skipping spots in Western PA.</p>
 
-				<div class="dropdownTitle">Music</div>
-				<div class="dropdownSubtitle" style="font-size:14px">Guitar, Saxophone, Bagpipes, Synthesizer in what small free time I find</div>
-				<div class="dropdownSubtitle">
-					<!--<p><a class="linkButton" href="https://www.youtube.com/watch?v=bq_awhCgWFE" target="_blank" style="width:480px">Wrote/performed music for talented friend's short film</a></p>
-					<p><a class="linkButton" href="https://www.youtube.com/channel/UChYKmkOqEhckVDZO2ZuRunw" target="_blank" style="width:350px">Personal Youtube channel for music</a></p>-->
-				</div>
-				<p><a class="nonButtonLink" href="https://www.youtube.com/watch?v=bq_awhCgWFE" target="_blank" style="width:480px;color:white">Composition: Short Film</a></p>
-				<p><a class="nonButtonLink" href="https://www.youtube.com/channel/UChYKmkOqEhckVDZO2ZuRunw" target="_blank" style="width:350px;color:white">Ordinature</a></p>
-				
-			</div>
 
-			<div class="dropdown" id="contact" style="text-align:center">
-				<div class="dropdownSubtitle" style="height:30px"> </div>
-				<div class="dropdownSubtitle" >pschalde at cs dot cmu dot edu</div>
-			</div>
+		<div class="peter-section col-sm-12" id="personal">
+            <div class="row mb-4">
+                <div class="col-sm-9">
+                    <h4 class="mb-2">Volunteer</h4>
+                    <h5 class="subheading mb-2">Muscular Dystrophy Association</h5>
+                    <div>Councelor and unit leader at MDA's summer camp for children with muscular diseases</div>
+                </div>
 
+                <div class="col-sm-3">2012-Present</div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-sm-12">
+                    <h4 class="mb-2">Action</h4>
+                    <h5 class="subheading mb-2">Volleyball</h5>
+                    <div>
+                        High school and college experience <br/>
+                        Currently assisting coach at Central Catholic High School
+                    </div>
+                    <h5 class="subheading mb-2 mt-2">Biking</h5>
+                    <div>You'll catch me outside on my bike as soon as the warm weather hits.  I use it to find the best rock skipping spots in Western PA.</div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-sm-12">
+                    <h4 class="mb-2">Music</h4>
+                    <div>
+                        Guitar, Saxophone, Bagpipes, Synthesizer in what small free time I find
+                    </div>
+                    <div><a href="https://www.youtube.com/watch?v=bq_awhCgWFE" target="_blank">Composition: Short Film</a></div>
+                    <div><a href="https://www.youtube.com/channel/UChYKmkOqEhckVDZO2ZuRunw" target="_blank">Ordinature</a></div>
+                </div>
+            </div>
 		</div>
 	</div>
 
 	<div class="acknowledgement">
-		Background animation is a modified version of 
+		Background animation is a modified version of
 		<a style="color:white" target="_blank" href="https://www.dwitter.net/d/1494">https://www.dwitter.net/d/1494</a>
 	</div>
 	<div id="cornerPlus" style="opacity:50%">+</div>
@@ -216,10 +327,13 @@
 		var backgroundColor = 214;
 		$(document).ready(function() {
 			setInterval(function() {
+            // setTimeout(function() {
 				$('body').css('background-color',
 						'hsl('+(backgroundColor++)%360+', 32%, 22%)');
 
 			},300);
+
+            setTimeout(function() { jQuery('#aboutButton').click(); }, 1000);
 		});
 
 		var c = document.querySelector("#backgroundCanvas");

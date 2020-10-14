@@ -1,13 +1,10 @@
 body {
 	min-width: 800px;
 	min-height: 700px;
-	font-size: 1em;
-	font-family: sans-serif;
 	letter-spacing: 1px;
-    color: #FFF;
+    color: #FFF !important;
+    text-shadow: 0px 0px 20px #000 !important;
     background-color: hsl(214, 32%, 22%);
-
-    margin: 0px 0px;
 }
 
 @font-face {
@@ -25,67 +22,55 @@ canvas.background {
 	background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,.4));
 }
 
-.infoContainer {
-	margin-top: 10%;
-	height: 60%;
-	text-align: center;
-	text-shadow: 0px 0px 20px black;
-	text-transform: uppercase;
-	margin-left: 20%;
-	width: 60%;
+.description {
+    margin: 5% 0%;
+    text-align: center;
 }
-.infoContainer > div, .infoContainer > table{
-	//margin-left: 20%;
-	//width: 60%;
-	max-width: 750px;
-	margin: auto auto;
+.description h1 {
+    color: #fff;
 }
-.infoButtons {
+.description p {
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1.5;
 }
 
-.name {
-	width: 100%;
-	font-size: 2.5em;
-	margin-bottom: 10px;
+.peter-section {
+    display: none;
+    overflow: hidden !important;
+}
+.peter-section .row:last-child {
+    margin-bottom: 20em;
 }
 
-.subTitle {
-	margin: 5px 0px;
-	font-size:.9em;
+.peter-section img {
+    background: #fff;
+    width: 100%;
 }
 
-.infoContainer > .externalLinks {
-	position:absolute;
-	bottom: 20px;
-	width:100%;
-	margin-left: 0%;
-	min-width: 1000px
+.peter-section a {
+    text-decoration: underline !important;
+    cursor: pointer;
+    color: #fff !important;
 }
 
-.links {
-	margin-top: 40px;
-	width:100%;
+#projects .row {
+    margin-bottom: 1em;
 }
-.linkDivider td {
-	width:25%;
-	text-align: center;
+
+.subheading {
+    color: #c1c2c3;
 }
+
 
 .linkButton {
-	float: center;
-	width:100px; 
-	font-size:12px;
-	//background-color: #141414;
-	background-color: rgba(0,0,0,0);
+	background-color: #0000;
 	display: inline-block;
-	text-decoration: none;
-    padding: 10px 0px;
-	text-align:center;
-	border-style:solid;
-	border-width: 1px;
-	border-color: white;
-	color:#FFFFFF;
+    padding: 0.5em;
+	border: solid 1px #fff;
+	color: #fff;
 	cursor: pointer;
+    margin-right: 1em;
 }
 .linkButton:hover {
 	transition: all 800ms ease-in-out;
@@ -96,47 +81,12 @@ canvas.background {
 	background-color: rgba(35,35,35,.85);
 }
 
-.nonButtonLink { 
+.nonButtonLink {
 	color: white;
 }
 
-.infoContainer > .dropdownInformation {
-	//margin-top:10px;
-	width: 75%;
-	max-width: 850px;
-	//margin-left: 20%;
-	text-align: left;
-}
-.dropdown {
-	text-transform: uppercase;
-	display: none;
-}
-.dropdownTitle {
-	font-size: 20px;
-	margin-top:15px;
-	margin-bottom: 3px;
-}
-.dropdownSubtitle {
-	font-size: 16px;
-	padding-left: 48px;
-	margin-top: 5px;
-	margin-bottom: 2px;
-}
-.dropdown p {
-	font-size: 14px;
-	padding-left: 96px;
-	margin: 1px 0px;
-}
-.musicContainer {
-	text-align:center;
-	padding-right:30%;
-}
-.musicContainer > p {
-	margin-top: 3px;
-}
-
 .acknowledgement {
-	position: absolute;
+	position: fixed;
 	bottom: 2%;
 	right: 2%;
 	width: 200px;
@@ -147,7 +97,7 @@ canvas.background {
 #cornerPlus {
 	color:white;
 	font-size:25px;
-	position:absolute;
+	position:fixed;
 	bottom: 0%;
 	right: 0%;
 	padding: 40px 40px;
@@ -155,7 +105,7 @@ canvas.background {
 }
 
 .pdfPopout {
-    position: absolute;
+    position: fixed;
     width: 80%;
     top: 10%;
     left: 10%;
@@ -166,7 +116,7 @@ canvas.background {
 }
 
 .exitPdf {
-	position: absolute;
+	position: fixed;
 	right: 5%;
 	top: 15%;
 	opacity: 0;

@@ -2,7 +2,7 @@ var clicked = null;
 var clickingDisabled = false;
 
 function openDropdown(dropdownId) {
-    //disable clicks 
+    //disable clicks
     if (clickingDisabled) {
         return;
     }
@@ -10,8 +10,8 @@ function openDropdown(dropdownId) {
     clickingDisabled = true;
     if (clicked === dropdownId) {
     	// Close the info
-        $('.dropdown').animate({ "height": '0px', "opacity": "0" }, 800, "linear", function() {
-            $('.dropdown').hide();
+        $('.peter-section').animate({ "height": '0px', "opacity": "0" }, 800, "linear", function() {
+            $('.peter-section').hide();
             clickingDisabled = false;
         });
         clicked = null;
@@ -22,13 +22,14 @@ function openDropdown(dropdownId) {
         return;
     } else {
     	//Open the info
-        $('.dropdown').fadeOut(40);
+        $('.peter-section').fadeOut(40);
 
         $(dropdownId).css('height', '0%');
         $(dropdownId).css('opacity', '0');
         $(dropdownId).show();
         $(dropdownId).animate({ "height": "60%", "opacity": "1" }, 1000, "swing", function() {
             clickingDisabled = false;
+            $(dropdownId).css('height', 'auto');
         });
 
         // Make the button look not clickable but only the correct one
