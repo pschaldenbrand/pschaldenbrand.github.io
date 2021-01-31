@@ -30,11 +30,19 @@ function openDropdown(dropdownId) {
         $(dropdownId).animate({ "height": "60%", "opacity": "1" }, 1000, "swing", function() {
             clickingDisabled = false;
             $(dropdownId).css('height', 'auto');
+
+            // Change the URL
+            window.location.hash = String(dropdownId) + '.html';
+
+            // Google Analytics
+            ga('set', 'page', '/' + dropdownId);
+            ga('send', 'pageview');
         });
 
         // Make the button look not clickable but only the correct one
         $('.linkButton').removeClass('clicked');
         $(dropdownId + 'Button').addClass('clicked');
+
     }
     clicked = dropdownId;
 }
