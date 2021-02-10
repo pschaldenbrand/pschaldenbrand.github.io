@@ -32,11 +32,18 @@ function openDropdown(dropdownId) {
             $(dropdownId).css('height', 'auto');
 
             // Change the URL
-            window.location.hash = String(dropdownId) + '.html';
+            window.location.hash = String(dropdownId).slice(1) + '.html';
 
             // Google Analytics
-            ga('set', 'page', '/' + dropdownId);
-            ga('send', 'pageview');
+            ga('set', 'page', '/' + dropdownId.slice(1) + '.html');
+            //ga('send', 'pageview');
+            ga('create', 'UA-112528477-1');
+            ga('send', {
+                hitType: 'pageview',
+                page: dropdownId.slice(1),
+                title: dropdownId.slice(1),
+                location: location.href
+            });
         });
 
         // Make the button look not clickable but only the correct one
