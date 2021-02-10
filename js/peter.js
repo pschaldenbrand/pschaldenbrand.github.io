@@ -44,6 +44,11 @@ function openDropdown(dropdownId) {
                 title: dropdownId.slice(1),
                 location: location.href
             });
+            ga('send', 'event', {
+                eventCategory: 'Tab',
+                eventAction: 'click',
+                eventLabel: dropdownId.slice(1)
+            });
         });
 
         // Make the button look not clickable but only the correct one
@@ -71,7 +76,21 @@ $(document).ready(function() {
         },
         function() {
             //$('.acknowledgement').fadeOut(1000);
-        });
+        }
+    );
+
+    // When clicking a link do a google analytics event.
+    jQuery('a').click(function() {
+        let href = jQuery(this).attr('href');
+        href = href == undefined ? "" : href;
+        if (href.length > 0) {
+            ga('send', 'event', {
+                eventCategory: 'Outbound Link',
+                eventAction: 'click',
+                eventLabel: href
+            });
+        }
+    });
 });
 
 function displayPdf(path) {
@@ -83,6 +102,11 @@ function displayPdf(path) {
     jQuery('.exitPdf').click(function() {
         jQuery('.pdfPopout, .exitPdf').remove();
     });
+    ga('send', 'event', {
+        eventCategory: 'Display PDF',
+        eventAction: 'click',
+        eventLabel: path
+    });
 }
 
 function displayImg(path) {
@@ -93,5 +117,10 @@ function displayImg(path) {
 
     jQuery('.exitPdf').click(function() {
         jQuery('.pdfPopout, .exitPdf').remove();
+    });
+    ga('send', 'event', {
+        eventCategory: 'Display Image',
+        eventAction: 'click',
+        eventLabel: path
     });
 }
