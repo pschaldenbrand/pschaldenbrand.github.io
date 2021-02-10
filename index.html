@@ -18,6 +18,17 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-112528477-1');
+
+        function check_ga() {
+            if (typeof ga === 'function') {
+                // Google Analytics tracking
+                ga('create', 'UA-XXXX-Y');
+            } else {
+                setTimeout(check_ga,500);
+            }
+        }
+        check_ga();
+
 	</script>
 </head>
 
