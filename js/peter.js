@@ -35,20 +35,22 @@ function openDropdown(dropdownId) {
             window.location.hash = String(dropdownId).slice(1) + '.html';
 
             // Google Analytics
-            ga('set', 'page', '/' + dropdownId.slice(1) + '.html');
-            //ga('send', 'pageview');
-            ga('create', 'UA-112528477-1');
-            ga('send', {
-                hitType: 'pageview',
-                page: dropdownId.slice(1),
-                title: dropdownId.slice(1),
-                location: location.href
-            });
-            ga('send', 'event', {
-                eventCategory: 'Tab',
-                eventAction: 'click',
-                eventLabel: dropdownId.slice(1)
-            });
+            try {
+                ga('set', 'page', '/' + dropdownId.slice(1) + '.html');
+                //ga('send', 'pageview');
+                ga('create', 'UA-112528477-1');
+                ga('send', {
+                    hitType: 'pageview',
+                    page: dropdownId.slice(1),
+                    title: dropdownId.slice(1),
+                    location: location.href
+                });
+                ga('send', 'event', {
+                    eventCategory: 'Tab',
+                    eventAction: 'click',
+                    eventLabel: dropdownId.slice(1)
+                });
+            } catch(err) { console.log(err); }
         });
 
         // Make the button look not clickable but only the correct one
@@ -84,11 +86,13 @@ $(document).ready(function() {
         let href = jQuery(this).attr('href');
         href = href == undefined ? "" : href;
         if (href.length > 0) {
-            ga('send', 'event', {
-                eventCategory: 'Outbound Link',
-                eventAction: 'click',
-                eventLabel: href
-            });
+            try {
+                ga('send', 'event', {
+                    eventCategory: 'Outbound Link',
+                    eventAction: 'click',
+                    eventLabel: href
+                });
+            } catch(err) { console.log(err); }
         }
     });
 });
@@ -102,11 +106,13 @@ function displayPdf(path) {
     jQuery('.exitPdf').click(function() {
         jQuery('.pdfPopout, .exitPdf').remove();
     });
-    ga('send', 'event', {
-        eventCategory: 'Display PDF',
-        eventAction: 'click',
-        eventLabel: path
-    });
+    try {
+        ga('send', 'event', {
+            eventCategory: 'Display PDF',
+            eventAction: 'click',
+            eventLabel: path
+        });
+    } catch(err) { console.log(err); }
 }
 
 function displayImg(path) {
@@ -118,9 +124,11 @@ function displayImg(path) {
     jQuery('.exitPdf').click(function() {
         jQuery('.pdfPopout, .exitPdf').remove();
     });
-    ga('send', 'event', {
-        eventCategory: 'Display Image',
-        eventAction: 'click',
-        eventLabel: path
-    });
+    try {
+        ga('send', 'event', {
+            eventCategory: 'Display Image',
+            eventAction: 'click',
+            eventLabel: path
+        });
+    } catch(err) { console.log(err); }
 }

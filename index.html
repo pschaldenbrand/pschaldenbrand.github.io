@@ -15,20 +15,21 @@
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+        try {
+    		gtag('js', new Date());
 
-		gtag('config', 'UA-112528477-1');
+    		gtag('config', 'UA-112528477-1');
 
-        function check_ga() {
-            if (typeof ga === 'function') {
-                // Google Analytics tracking
-                ga('create', 'UA-112528477-1');
-            } else {
-                setTimeout(check_ga,500);
+            function check_ga() {
+                if (typeof ga === 'function') {
+                    // Google Analytics tracking
+                    ga('create', 'UA-112528477-1');
+                } else {
+                    setTimeout(check_ga,500);
+                }
             }
-        }
-        check_ga();
-
+            check_ga();
+        } catch(err) { console.log(err); }
 	</script>
 </head>
 
@@ -86,7 +87,7 @@
                     <a href="http://cmmc-cvpr21.com/" target="_blank">Website</a>
                     <div>
                         <a href="https://sites.rutgers.edu/ahmed-elgammal/" target="_blank">Ahmed Elgammal (Rutgers)</a>
-                        <a href="https://www.cs.ubc.ca/~hyejuj/" target="_blank">Hyeju Jang (U. British Columbia</a>
+                        <a href="https://www.cs.ubc.ca/~hyejuj/" target="_blank">Hyeju Jang (U. British Columbia)</a>
                         <a href="http://kangeunsu.com/" target="_blank">Eunsu Kang</a>
                         <a href="http://www.cs.cmu.edu/~jmccann/" target="_blank">James McCann (CMU)</a>
                         <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh (CMU)</a>
@@ -95,7 +96,7 @@
                         <a href="http://roberttwomey.com/" target="_blank">Robert Twomey (UCSD)</a> and
                         <a href="https://www.cs.cmu.edu/~junyanz/" target="_blank">Jun-Yan Zhu (CMU)</a>
                     </div>
-                    <div>We are organizing a conference to close the gap between the way that humans and machines evalaute creativity.</div>
+                    <div>We are organizing a conference to highlight the differences between the way that humans and machines evalaute creativity, and begin a conversation on how to bridge this gap.</div>
                 </div>
             </div>
             <div class="row">
@@ -350,6 +351,7 @@
                     <div>
                         Guitar, Saxophone, Bagpipes, Synthesizer in what small free time I find
                     </div>
+                    <div><a href="https://skeeter-human.bandcamp.com/album/peter-demo" target="_blank">Demo</a></div>
                     <div><a href="https://www.youtube.com/watch?v=bq_awhCgWFE" target="_blank">Composition: Short Film</a></div>
                     <div><a href="https://www.youtube.com/channel/UChYKmkOqEhckVDZO2ZuRunw" target="_blank">Ordinature</a></div>
                 </div>
