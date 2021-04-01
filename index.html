@@ -46,22 +46,22 @@
         <p />
 
 		<div class="info-buttons">
-            <div class="linkButton" id="aboutButton" onclick='openDropdown("#about");'>
+            <div class="linkButton shadow" id="aboutButton" onclick='openDropdown("#about");'>
                 ABOUT
             </div>
-            <div class="linkButton" id="publicationsButton" onclick='openDropdown("#publications");'>
+            <div class="linkButton shadow" id="publicationsButton" onclick='openDropdown("#publications");'>
                 PUBLICATIONS
             </div>
-            <div class="linkButton" id="projectsButton" onclick='openDropdown("#projects");'>
+            <div class="linkButton shadow" id="projectsButton" onclick='openDropdown("#projects");'>
                 PROJECTS
             </div>
-			<div class="linkButton" id="experienceButton" onclick='openDropdown("#experience");'>
+			<div class="linkButton shadow" id="experienceButton" onclick='openDropdown("#experience");'>
 				EXPERIENCE
 			</div>
-            <div class="linkButton" id="educationButton" onclick='openDropdown("#education");'>
+            <div class="linkButton shadow" id="educationButton" onclick='openDropdown("#education");'>
                 EDUCATION
             </div>
-			<div class="linkButton" id="personalButton" onclick='openDropdown("#personal");'>
+			<div class="linkButton shadow" id="personalButton" onclick='openDropdown("#personal");'>
 				PERSONAL
 			</div>
 		</div>
@@ -69,6 +69,9 @@
 
     <div class="container-fluid col-sm-10 col-lg-9">
         <div class="peter-section col-lg-12" id="publications">
+            <div class="row">
+                <div class="h2">Conference Papers</div>
+            </div>
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/ours_vs_baseline.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
@@ -78,6 +81,20 @@
                     <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
                     <div>Novel approach to increasing the human-like planning of a reinforcement learning model.</div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/doer_effect.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Is the Doer Effect Robust Across Multiple Data Sets?</h3>
+                    <div>11th Conf. on Education Data Mining</div>
+                    <!--<a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank">Paper</a>-->
+                    <a onclick='displayPdf("resources/EDM2018_paper_129.pdf")'>Paper</a>
+                    <div><a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a>, <a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, and Peter Schaldenbrand</div>
+                    <div>Establishing the causal effect between active resources in an educational environment and learning.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="h2">Workshops</div>
             </div>
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/cvpr2021.jpg" class="img-fluid" /></div>
@@ -100,14 +117,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/doer_effect.png" class="img-fluid" /></div>
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/siggraph2021.jpg" class="img-fluid" /></div>
                 <div class="col-sm-9">
-                    <h3>Is the Doer Effect Robust Across Multiple Data Sets?</h3>
-                    <div>11th Conf. on Education Data Mining</div>
-                    <!--<a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank">Paper</a>-->
-                    <a onclick='displayPdf("resources/EDM2018_paper_129.pdf")'>Paper</a>
-                    <div><a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a>, <a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, and Peter Schaldenbrand</div>
-                    <div>Establishing the causal effect between active resources in an educational environment and learning.</div>
+                    <h3>SIGGRAPH'21 Workshop on Measurable Creative AI</h3>
+                    <!-- <a href="http://cmmc-cvpr21.com/" target="_blank">Website</a> -->
+                    <div>
+                        <a href="https://sites.rutgers.edu/ahmed-elgammal/" target="_blank">Ahmed Elgammal (Rutgers)</a>
+                        <a href="https://www.cs.ubc.ca/~hyejuj/" target="_blank">Hyeju Jang (U. British Columbia)</a>
+                        <a href="http://kangeunsu.com/" target="_blank">Eunsu Kang</a>
+                        <a href="http://www.cs.cmu.edu/~jmccann/" target="_blank">James McCann (CMU)</a>
+                        <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh (CMU)</a>
+                        <a href="https://www.cc.gatech.edu/~parikh/" target="_blank">Devi Parikh (Georgia Tech)</a>
+                        Peter Schaldenbrand
+                        <a href="http://roberttwomey.com/" target="_blank">Robert Twomey (UCSD)</a> and
+                        <a href="https://www.cs.cmu.edu/~junyanz/" target="_blank">Jun-Yan Zhu (CMU)</a>
+                    </div>
+                    <!-- <div>We are organizing a conference to highlight the differences between the way that humans and machines evalaute creativity, and begin a conversation on how to bridge this gap.</div> -->
                 </div>
             </div>
             <div class="row">
@@ -237,19 +262,21 @@
 
 		<div class="peter-section" id="about">
             <div class="row">
-                <div class="col-sm-0 col-lg-1"></div>
-                <div class=" col-sm-12 col-lg-10">
+                <div class="col-xl-3 col-md-4 col-9 mx-auto">
+                    <img src="images/pete.jpg" class="img-fluid shadow" />
+                </div>
+                <div class="col-md-8 col-xl-9">
                     I am a graduate student and technical staff member of Carnegie Mellon University's Human-Computer Interaction Institute.
                     <div class="ml-4">
-                        <div class="mt-4">
+                        <li class="mt-4">
                             At work, my goal is to address the opportunity gap that marginalized students face by creating technologies that make teaching and mentoring more effective and efficient.
-                        </div>
-                        <div class="mt-2">
+                        </li>
+                        <li class="mt-2">
                             At school, I study machine learning, computer vision, and robotics to aid my research.
-                        </div>
-                        <div class="mt-2">
+                        </li>
+                        <li class="mt-2">
                             In research, I am interested in making machine learning models that are capable of performing creative tasks such as image generation, painting, and video creation.
-                        </div>
+                        </li>
                     </div>
                 </div>
             </div>
@@ -267,14 +294,14 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div>
-                        <a href="http://www.cs.cmu.edu/~pl2" target="_blank">Personalized Learning&sup2;</a>
+                        <a href="http://personalizedlearning2.org/" target="_blank">Personalized Learning&sup2;</a>
                         <div>
                             Full-stack, lead developer on the Personalized Learning&sup2; project; addressing the opportunity gap for marginalized students.  Created an interface for teachers and mentors at public schools in the Pittsburgh region to view data from their students’ usage of multiple Math tutoring software and access resources to intervene on students’ motivational and cognitive obstacles.  Gave input on the designing of the tool and managed multiple design interns throughout its development process.
                         </div>
                     </div>
 
                     <div class="mt-2">
-                        <a href="https://pslcdatashop.web.cmu.edu/LearnSphere" target="_blank">Learnsphere Tigris</a>
+                        <a href="http://learnsphere.org/" target="_blank">Learnsphere Tigris</a>
                         <div>
                             Contributed improvements in full stack development to LearnSphere’s Tigris: An online workflow tool for analyzing, visualizing, and mining educational data
                         </div>
@@ -430,7 +457,7 @@
 	      	//},2);
 	        //requestAnimationFrame(loop);
 	      }
-	      time = frame/120;
+	      time = frame/200;
 	      if(time * 60 | 0 == frame - 1){
 	        time += 0.000001;
 	      }
