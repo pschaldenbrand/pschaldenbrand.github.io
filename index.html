@@ -34,12 +34,16 @@
 </head>
 
 <body>
-	<canvas id="backgroundCanvas" class="background"></canvas>
+    <img id="background-image" src="images/pgh2.png" style="position:fixed;z-index:-2;width:200vh;bottom:3%;opacity:.9;left:0px;"/>
+    <img id="background-river" src="images/river.png" style="position:fixed;z-index:-4;width:200vh;bottom:0%;opacity:.8;left:0px;"/>
+    <img id="background-clouds" src="images/clouds.png" style="position:fixed;z-index:-5;width:200vh;bottom:0%;opacity:.7;right:0px;"/>
+    <canvas id="backgroundCanvas" class="background"></canvas>
+    <div style="position:fixed;z-index:-1;width:100vw;left:0px;height:100vh;background-color:#1a1a1a61;top:0;"/></div>
 
 	<div class="description">
 		<h1>Peter Schaldenbrand</h1>
 
-		<div>Research Programmer | <span style="margin-left:0em">Machine Learning Graduate Student</span> </div>
+		<div>Research Programmer | <span style="margin-left:0em">Incoming PhD Student</span> </div>
 		<div>Carnegie Mellon University</div>
         <div>pschalde at cs dot cmu dot edu</div>
 
@@ -83,10 +87,28 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/edtech_to_resources3.png" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Computer-Supported Human Mentoring for Personalized and Equitable Math Learning</h3>
+                    <div>[Accepted] 2021 Conf. on Artificial Intelligence in Education (AIED21)</div>
+                    <a onclick='displayPdf("resources/pl2_aied_2021.pdf")'>Paper</a>
+                    <div>
+                        Peter Schaldenbrand,
+                        <a href="https://sites.google.com/view/nikkilobczowski" target="_blank">Nikki G. Lobczowski</a>,
+                        <a href="https://sites.google.com/site/jelizabethrichey/home" target="_blank">J. Elizabeth Richey</a>,
+                        Shivang Gupta,
+                        <a href="https://hcii.cmu.edu/people/elizabeth-mclaughlin" target="_blank">Elizabeth A. McLaughlin</a>,
+                        <a href="https://scholar.google.com/citations?user=zTMHJu0AAAAJ&hl=en" target="_blank">Adetunji Adeniran</a>, and
+                        <a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth R. Koedinger</a>
+                    </div>
+                    <div>Novel approach to increasing the human-like planning of a reinforcement learning model.</div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/doer_effect.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>Is the Doer Effect Robust Across Multiple Data Sets?</h3>
-                    <div>11th Conf. on Education Data Mining</div>
+                    <div>11th Conf. on Educational Data Mining</div>
                     <!--<a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank">Paper</a>-->
                     <a onclick='displayPdf("resources/EDM2018_paper_129.pdf")'>Paper</a>
                     <div><a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a>, <a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, and Peter Schaldenbrand</div>
@@ -136,10 +158,27 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/rss.png" class="img-fluid" style="background:none;" /></div>
+                <div class="col-sm-9">
+                    <h3>RSS'21 Robotics x Arts Exhibition: Opportunities and Issues in Robotics Applied in the Arts</h3>
+                    <!-- <a href="http://cmmc-cvpr21.com/" target="_blank">Website</a> -->
+                    <div>
+                        Sang Leigh (Georgia Tech),
+                        Jean Oh (CMU),
+                        Frank Dellaert (GT),
+                        Seth Hutchinson (GT),
+                        Peter Schaldenbrand,
+                        Gerry Cehn (GT), and
+                        Juan D Florez-Castillo (GT)
+                    </div>
+                    <!-- <div>We are organizing a conference to highlight the differences between the way that humans and machines evalaute creativity, and begin a conversation on how to bridge this gap.</div> -->
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/tetrad_learnsphere.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>Workshop: Causal Discovery with Tetrad in LearnSphere’s Tigris</h3>
-                    <div>12th Conf. on Education Data Mining</div>
+                    <div>12th Conf. on Educational Data Mining</div>
                     <a onclick='displayPdf("resources/EDM_2019_paper_4.pdf")'>Paper</a>
                     <div><a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, Peter Schaldenbrand, and <a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a></div>
                 </div>
@@ -289,7 +328,7 @@
                     <h5 class="subheading mb-3">Carnegie Mellon University <br/> Human-Computer Interaction Institute</h5>
 
                 </div>
-                <div class="col-sm-3">2017-Present</div>
+                <div class="col-sm-3">2017 &#8212; Present</div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
@@ -317,12 +356,20 @@
         <div class="peter-section col-lg-12" id="education">
             <div class="row mb-3">
                 <div class="col-sm-9">
+                    <h4 class="mb-2">Carnegie Mellon University <br/> Robotics Institute</h4>
+                    <h5 class="subheading mb-2">Doctor of Philosophy</h5>
+                </div>
+
+                <div class="col-sm-3">August 2021 &#8212; </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-9">
                     <h4 class="mb-2">Carnegie Mellon University <br/> Language Technologies Institute</h4>
-                    <h5 class="subheading mb-2">Master of Computational Data Science - Analytics</h5>
+                    <h5 class="subheading mb-2">Master of Computational Data Science &#8212; Analytics</h5>
                     <div>GPA: 3.9</div>
                 </div>
 
-                <div class="col-sm-3">2020-Dec 2021</div>
+                <div class="col-sm-3">2020 &#8212; Dec 2021</div>
             </div>
 
             <div class="row mb-3">
@@ -332,7 +379,7 @@
                     <div>GPA: 3.9</div>
                 </div>
 
-                <div class="col-sm-3">2013-2017</div>
+                <div class="col-sm-3">2013 &#8212; 2017</div>
             </div>
 
             <div class="row mb-3">
@@ -341,7 +388,7 @@
                     <h5 class="subheading mb-2">Pittsburgh, PA</h5>
                 </div>
 
-                <div class="col-sm-3">2009-2013</div>
+                <div class="col-sm-3">2009 &#8212; 2013</div>
             </div>
 		</div>
 
@@ -356,7 +403,7 @@
                     <div>Councelor and unit leader at MDA's summer camp for children with muscular diseases</div>
                 </div>
 
-                <div class="col-sm-3">2012-Present</div>
+                <div class="col-sm-3">2012 &#8212; Present</div>
             </div>
 
             <div class="row mb-4">
@@ -399,10 +446,40 @@
 		$(document).ready(function() {
 			setInterval(function() {
             // setTimeout(function() {
-				$('body').css('background-color',
-						'hsl('+(backgroundColor++)%360+', 32%, 22%)');
+				// $('body').css('background-color',
+				// 		'hsl('+(backgroundColor++)%360+', 32%, 22%)');
+
+                $('body').css('background-color',
+                        'hsl('+(backgroundColor++)%360+', 62%, 42%)');
 
 			},300);
+
+            pghGoingRight = true;
+            goingTime = 500000;
+            setInterval(function() {
+                if (pghGoingRight) {
+                    jQuery('#background-image').animate({left:-1*(jQuery('#background-image').width() - jQuery(window).width())}, goingTime, 'linear');
+                } else {
+                    jQuery('#background-image').animate({left:0}, goingTime, 'linear');
+                }
+                pghGoingRight = !pghGoingRight;
+            }, goingTime + 1000);
+            jQuery('#background-image').animate({left:-1*(jQuery('#background-image').width() - jQuery(window).width())}, goingTime, 'linear');
+            pghGoingRight = !pghGoingRight;
+
+
+            cloudsGoingRight = false;
+            setInterval(function() {
+                if (cloudsGoingRight) {
+                    jQuery('#background-clouds').animate({left:-1*(jQuery('#background-clouds').width() - jQuery(window).width())}, goingTime, 'linear');
+                } else {
+                    jQuery('#background-clouds').animate({left:0}, goingTime, 'linear');
+                }
+                cloudsGoingRight = !cloudsGoingRight;
+            }, goingTime + 1000);
+            jQuery('#background-clouds').animate({left:0}, goingTime, 'linear');
+            cloudsGoingRight = !cloudsGoingRight;
+
 
             setTimeout(function() {
                 let hash = window.location.hash.replace('.html','');
@@ -457,7 +534,7 @@
 	      	//},2);
 	        //requestAnimationFrame(loop);
 	      }
-	      time = frame/200;
+	      time = frame/600;
 	      if(time * 60 | 0 == frame - 1){
 	        time += 0.000001;
 	      }
