@@ -1,0 +1,223 @@
+<!--
+Author: Peter Schaldenbrand
+Borrowing heavily from: https://github.com/deduble/gaugan-gui
+ -->
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="semantic_map_drawer/prism.css">
+    <link rel="stylesheet" href="semantic_map_drawer/website.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- in a production environment, you can include the minified css. It contains the css of the board and the default controls (size, nav, colors):
+<link rel="stylesheet" href="../dist/drawingboard.min.css"> -->
+    <link rel="stylesheet" href="semantic_map_drawer/source/css/drawingboard.css">
+    <style>
+        body {
+            background: #d1eeef;
+        }
+        html, body, h1, h2, h3, h4, h5, h6 {
+            /*font-family: "Amatic", "Consolas", cursive, sans-serif;*/
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Indie Flower', cursive;
+            letter-spacing: 1.5;
+        }
+        .drawing-board-control-inner > .drawing-board-utils-hidden {
+            display: inline-block !important;
+        }
+        .drawing-board-controls {
+            margin-bottom: 55px !important;
+        }
+        .drawing-board-control-colors-picker {
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        /*
+        * drawingboards styles: set the board dimensions you want with CSS
+        */
+        .board {
+            float: left;
+            margin: 0 auto;
+            width: 400px;
+            height: 400px;
+        }
+        #color-description-table {
+            font-size: 2rem;
+            width: 100%;
+        }
+        #color-description-table input {
+            font-size: 1.5rem;
+            width: 100%;
+            max-width: 500px;
+            font-family: 'Amatic SC', cursive;
+            font-family: 'Indie Flower', cursive;
+            font-weight: 600;
+            letter-spacing: 1.5;
+        }
+        #color-description-table tr *:nth-child(2) {
+            padding-left: 1rem;
+        }
+        #default-board {
+            width: 600px;
+            height: 400px;
+        }
+        button {
+            font-size: 1.7rem !important;
+            padding:  0.5rem !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mx-auto col-12 col-lg-8">
+                <div class="mt-4 mb-3">
+                    <h1>Compositional Input</h1>
+                    <div class="text-secondary">
+                        Draw a semantic map to specify the composition of the image you want to generate.  For every semantic region (color) you draw with, describe what the content is at the bottom.  Click the Download button when you are finished to save the semantic map and JSON text description info.
+                    </div>
+                    <div style="text-align:right;">
+                        <button class="save btn btn-primary">Download</button>
+                    </div>
+                    <div class="board" id="default-board">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-4">
+        <div class="row">
+            <div class="mx-auto col-12 col-lg-8">
+                <table id="color-description-table">
+                    <tr>
+                        <th>Color</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright: Creative AI team in
+            <a class="text-white" href="http://www.cs.cmu.edu/~jeanoh/big/">Carnegie Mellon's Bot Intelligence Group (BIG)</a>
+      </div>
+    </footer>
+
+    <!-- jquery is required - zepto might do the trick too -->
+    <script src="semantic_map_drawer/source/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="semantic_map_drawer/source/bower_components/simple-undo/lib/simple-undo.js"></script>
+    <!-- in a production environment, just include the minified script. It contains the board and the default controls (size, nav, colors, download): -->
+    <script src="semantic_map_drawer/source/dist/drawingboard.min.js"></script>
+    <script src="semantic_map_drawer/source/dist/drawingboard.js"></script>
+    <script src="semantic_map_drawer/source/js/controls/color.js"></script>
+    <svg style="visibility:hidden;width:0;height:0;">
+        <defs>
+            <!--SVG filter to remove alpha-->
+            <filter id="crisp">
+                <feComponentTransfer>
+                    <feFuncA type="discrete" tableValues="0,1"></feFuncA>
+                </feComponentTransfer>
+            </filter>
+        </defs>
+    </svg>
+    <script data-example="1">
+    //create the drawingboard by passing it the #id of the wanted container
+    var defaultBoard = new DrawingBoard.Board('default-board', { "size": 30 });
+    defaultBoard.opts.size = 40
+
+    var generated = document.getElementById("generated_img");
+    defaultBoard.addControl('Download');
+
+    function send_image() {
+        generated.src = "semantic_map_drawer/loading.gif";
+        var img = defaultBoard.getImg();
+        //console.log(img);
+        const Http = new XMLHttpRequest();
+        const url = 'http://127.0.0.1:80/generate';
+        Http.open("POST", url, true);
+        Http.setRequestHeader('Content-Type', 'application/json');
+        Http.setRequestHeader('Content-Disposition', 'attachment; filename="yoooo.png"');
+        Http.setRequestHeader('Access-Control-Allow-Origin', '*');
+        const data = JSON.stringify({ "b64": img });
+        Http.send(data);
+        Http.onreadystatechange = (e) => {
+            var b64_src = "data:image/png;base64, ";
+            b64_src = b64_src + Http.responseText;
+            generated.src = b64_src;
+        }
+
+    }
+    let saveBtn = jQuery(".save")[0]
+    saveBtn.addEventListener("click", () => {
+        // Download the semantic map
+        let data = jQuery('canvas')[0].toDataURL("imag/png")
+        let a = document.createElement("a")
+        a.href = data
+        a.download = "semantic_map.png"
+        a.click();
+
+        // Download color text description JSON
+        let obj = getColorTextJSON();
+        obj = JSON.stringify(obj);
+        a = document.createElement("a");
+        let file = new Blob([obj], { type: "text/plain" });
+        a.href = URL.createObjectURL(file);
+        a.download = "color_text_map.json";
+        a.click();
+    });
+
+    // Credit: https://stackoverflow.com/questions/1740700/how-to-get-hex-color-value-rather-than-rgb-value
+    const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`
+
+    jQuery(document).ready(function() {
+        // Set the colors in the table
+        jQuery('.drawing-board-control-colors-picker').each(function() {
+            //console.log(jQuery(this).css('background-color'));
+            let color = jQuery(this).css('background-color');
+            let colorCell = jQuery('<td>').css('background-color', color);
+            let inputCell = jQuery('<td><input type="text" class="form-control"/></td>');
+            jQuery('#color-description-table').append(
+                jQuery('<tr class="color-text"/>').append(colorCell).append(inputCell)
+            );
+        })
+    });
+
+    function getColorTextJSON() {
+        colorText = {}
+        jQuery('tr.color-text').each(function() {
+            let rgbColor = jQuery(jQuery(this).children()[0]).css('background-color');
+            hexColor = rgb2hex(rgbColor);
+            let text = jQuery(jQuery(this).find('input')[0]).val();
+            colorText[hexColor] = text;
+        });
+        console.log(colorText);
+        return colorText;
+    }
+    </script>
+</body>
+
+</html>
