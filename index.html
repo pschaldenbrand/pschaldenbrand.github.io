@@ -55,11 +55,11 @@
                 ABOUT
             </div>
             <div class="linkButton shadow" id="publicationsButton" onclick='openDropdown("#publications");'>
-                PUBLICATIONS
+                RESEARCH
             </div>
-            <div class="linkButton shadow" id="projectsButton" onclick='openDropdown("#projects");'>
+            <!-- <div class="linkButton shadow" id="projectsButton" onclick='openDropdown("#projects");'>
                 PROJECTS
-            </div>
+            </div> -->
 			<div class="linkButton shadow" id="experienceButton" onclick='openDropdown("#experience");'>
 				EXPERIENCE
 			</div>
@@ -78,12 +78,30 @@
                 <div class="h2">Conference Papers</div>
             </div> -->
             <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                    <img src="images/frida.jpg" class="img-fluid" />
+                    <img src="images/frida_paintings.png" class="img-fluid" style="background:none;" />
+                </div>
+                <div class="col-sm-9">
+                    <h3>Frida: A Narrative Robot Painter with Versatile Styles</h3>
+                    <div>Robot Exhibition at the 2022 International Joint Conference on Artificial Intelligence</div>
+                    <a href="https://www.youtube.com/watch?v=AjprPa0k4Lc" target="_blank">YouTube</a>
+                    <div>Peter Schaldenbrand, Zhixuan Liu, Jia Chen Xu, James McCann, Jean Oh</div>
+                    <div>
+                        Frida is a robotic system that paints from given language description and example style. We believe a nessary
+                        component of art is that it communicates an important message, and Frida has been painting to draw attention
+                        to the need to increase women's rights in America with respect to bodily autonomy.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/styleclipdraw_main_example.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
-                    <h3>StyleCLIPDraw: Coupling Content and Style in Text-to-Drawing Synthesis</h3>
+                    <h3>StyleCLIPDraw: Coupling Content and Style in Text-to-Drawing Translation</h3>
+                    <div>The 2022 International Joint Conference on Artificial Intelligence</div>
                     <div>The 2021 NeurIPS Workshop on Machine Learning for Creativity and Design</div>
                     <a href="https://slideslive.com/38970834/styleclipdraw-coupling-content-and-style-in-texttodrawing-synthesis?ref=account-folder-92044-folders" target="_blank">Accepted for Oral Presentation</a>
-                    <a href="https://arxiv.org/abs/2111.03133" target="_blank">arXiv</a>
+                    <a href="https://arxiv.org/abs/2202.12362" target="_blank">arXiv</a>
                     <a href="https://github.com/pschaldenbrand/StyleCLIPDraw" target="_blank">Github</a>
                     <a href="https://www.youtube.com/watch?v=5xzcIzHm8Wo" target="_blank">What's AI on YouTube</a>
                     <div>Peter Schaldenbrand, <a href="https://ariannaliu.github.io/" target="_blank">Zhixuan Liu</a>, and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
@@ -98,6 +116,27 @@
                     <a href="https://arxiv.org/abs/2012.10043" target="_blank">arXiv pre-print</a>
                     <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
                     <div>Novel approach to increasing the human-like planning of a reinforcement learning model.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/coolin_painted.gif" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Machine Traditional Animation: AniPainter</h3>
+                    <!-- <a onclick='displayPdf("resources/Robot_Animator.pdf")'>Paper</a> -->
+                    <a href="https://sites.gatech.edu/robotic-art-workshop/2021/07/02/anipainter/" target="_blank">
+                        Presented at a Workshop at RSS
+                    </a>
+                    <a href="https://github.com/pschaldenbrand/AniPainter" target="_blank">Website</a>
+                    <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
+                    <div>Using an affordable robot arm to "hand" paint animation frames.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/tomato_rendered.jpg" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>PyPainterly</h3>
+                    <a href="https://github.com/pschaldenbrand/PyPainterly" target="_blank">Website</a>
+                    <div>Aaron Hertzmann's algorithm for stroke-based rendering in Python.</div>
                 </div>
             </div>
             <div class="row">
@@ -130,7 +169,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="h2">Workshops</div>
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/styled_video.gif" class="img-fluid" /></div>
+                <div class="col-sm-9">
+                    <h3>Video Style Transfer</h3>
+                    <a href="https://github.com/pschaldenbrand/STROTSS-Video" target="_blank">Website</a>
+                    <div>Video style transfer using Style Transfer by Relaxed Optimal Transport and Self-Similarity.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="h2">Workshops Organized & Teaching</div>
             </div>
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/cvpr2021.jpg" class="img-fluid" /></div>
@@ -204,19 +251,7 @@
         </div>
 
 		<div class="peter-section col-lg-12" id="projects">
-            <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/coolin_painted.gif" class="img-fluid" /></div>
-                <div class="col-sm-9">
-                    <h3>Machine Traditional Animation: AniPainter</h3>
-                    <!-- <a onclick='displayPdf("resources/Robot_Animator.pdf")'>Paper</a> -->
-                    <a href="https://sites.gatech.edu/robotic-art-workshop/2021/07/02/anipainter/" target="_blank">
-                        Presented at a Workshop at RSS
-                    </a>
-                    <a href="https://github.com/pschaldenbrand/AniPainter" target="_blank">Website</a>
-                    <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
-                    <div>Using an affordable robot arm to "hand" paint animation frames.</div>
-                </div>
-            </div>
+
             <!-- <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/robot_painting.gif" class="img-fluid" /></div>
                 <div class="col-sm-9">
@@ -246,27 +281,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/styled_video.gif" class="img-fluid" /></div>
-                <div class="col-sm-9">
-                    <h3>Video Style Transfer</h3>
-                    <a href="https://github.com/pschaldenbrand/STROTSS-Video" target="_blank">Website</a>
-                    <div>Video style transfer using Style Transfer by Relaxed Optimal Transport and Self-Similarity.</div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/causal_model.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>Non-Differentiable, Parametric Model Optimization via Causal Discovery</h3>
                     <a onclick='displayPdf("resources/Causal_Discovery_Optimization.pdf")'>Paper</a>
                     <div>[In Progress] Optimize the parameters of a model using causal discovery algorithms. Allows for non-differentiable activation functions in the model.</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/tomato_rendered.jpg" class="img-fluid" /></div>
-                <div class="col-sm-9">
-                    <h3>PyPainterly</h3>
-                    <a href="https://github.com/pschaldenbrand/PyPainterly" target="_blank">Website</a>
-                    <div>Aaron Hertzmann's algorithm for stroke-based rendering in Python.</div>
                 </div>
             </div>
             <div class="row">
@@ -323,7 +342,7 @@
 		<div class="peter-section" id="about">
             <div class="row">
                 <div class="col-xl-3 col-md-4 col-9 mx-auto">
-                    <img src="images/pete.jpg" class="img-fluid shadow" />
+                    <img src="images/pete22.jpg" class="img-fluid shadow" />
                 </div>
                 <div class="col-md-8 col-xl-9">
                     I am a PhD student at Carnegie Mellon University's Robotics Institute advised by Dr. Jean Oh.
@@ -343,6 +362,12 @@
                         </li>
                     </div>
                 </div> -->
+            </div>
+            <div class="row" style="padding:2rem;">
+                <div class="col-lg-8 mx-auto" style="max-height:40rem;overflow-y:scroll;">
+                    <a class="twitter-timeline" href="https://twitter.com/EntroPete?ref_src=twsrc%5Etfw">Tweets by EntroPete</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
             </div>
 		</div>
 
@@ -429,7 +454,7 @@
                     <div>Councelor and unit leader at MDA's summer camp for children with muscular diseases</div>
                 </div>
 
-                <div class="col-sm-3">2012 &#8212; Present</div>
+                <div class="col-sm-3">2012 &#8212; 2020</div>
             </div>
 
             <div class="row mb-4">
