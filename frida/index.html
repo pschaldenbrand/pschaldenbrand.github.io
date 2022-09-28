@@ -1,0 +1,180 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="stylesheet" href="css/peter.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="../js/lib/jquery-1.7.1.min.js"></script>
+    <!-- <script src="js/peter.js"></script> -->
+    <title>FRIDA</title>
+    <link rel="icon" href="assets/favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112528477-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        try {
+            gtag('js', new Date());
+
+            gtag('config', 'UA-112528477-1');
+
+            function check_ga() {
+                if (typeof ga === 'function') {
+                    // Google Analytics tracking
+                    ga('create', 'UA-112528477-1');
+                } else {
+                    setTimeout(check_ga,500);
+                }
+            }
+            check_ga();
+        } catch(err) { console.log(err); }
+    </script>
+    <style>
+    body {
+        background: #000;
+        color: white;
+    }
+    .banner {
+        background-image: url('assets/walk_in.gif');
+        background-size:  cover;
+        background-position: center;
+    }
+    iframe, img {
+        max-width: 100%;
+        width: 100%;
+        max-height: 20rem;
+    }
+    .gif-container > div > div {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .portrait-backs {
+        background: #0000005e;
+        position: absolute;
+        width: 97%;
+        height: 100%;
+        filter: blur(20px);
+        z-index:-1;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="jumbotron" style="background-color:#0000003d">
+                <h1 class="display-4" style="font-weight:400">FRIDA: A Collaborative Robot Painter <!-- with a Differentiable, Real2Sim2Real Planning Environment --></h1>
+                <p class="lead" style="font-weight:400">
+                    Peter Schaldenbrand, James McCann, & Jean Oh<br/>
+                    The Robotics Institute, Carnegie Mellon University
+                </p>
+                <!-- <hr class="my-4"> -->
+                <p>
+                </p>
+                <p>
+                    FRIDA, a Framework and Robotics Initiative for Developing Arts, is an ongoing robot painting and creative artificial intelligence project at CMU developed by PhD student Peter Schaldenbrand and principal investigators James McCann and Jean Oh
+                </p>
+                <p>
+                    FRIDA can paint from multiple modes of inspiration from the artist in collaboration: reference images and language descripions in different styles given by example images. Composition can be influenced by a user drawn rough sketch.  FRIDA is open source and evolving.
+                </p>
+            <a class="btn btn-info btn-lg m-2" href="#" role="button">
+                <img  style="width:32px" src="https://pbs.twimg.com/media/EcglfCHU4AA6-yj.png" height=32/>
+                ArXiv
+            </a>
+            <a class="btn btn-info btn-lg m-2" href="https://colab.research.google.com/github/pschaldenbrand/Text2Video/blob/main/Text2Video.ipynb" role="button" target="_blank">
+                <img  style="width:32px" src="https://pbs.twimg.com/profile_images/1330956917951270912/DyIZtTA8_400x400.png" height=32/>
+                Colab Demo
+            </a>
+            <a class="btn btn-info btn-lg m-2" href="https://github.com/pschaldenbrand/Frida" role="button" target="_blank">
+                <img  style="width:32px" src="https://cdn.iconscout.com/icon/free/png-256/github-1521500-1288242.png" height=32/>
+                GitHub
+            </a>
+            <a class="btn btn-info btn-lg m-2" href="https://twitter.com/FridaRobot" role="button" target="_blank">
+                <img  style="width:32px" src="https://cdn-icons-png.flaticon.com/512/25/25347.png" height=32/>
+                Twitter
+            </a>
+
+            <!-- <a class="m-2" href="https://twitter.com/FridaRobot" target="_blank">
+                <img style="width:32px" src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1397180207/d242197edc3ff044620cf2d8ff39d6b3.jpg" height=32/>
+            </a> -->
+        </div>
+    </div>
+
+
+    <div class="container-fluid gif-container">
+        <div class="row text-center">
+            <div class="col-md-6 col-xl-4 mt-4">
+                <p class="lead">FRIDA working in our lab at CMU</p>
+                <img src="assets/walk_in.gif" />
+            </div>
+            <div class="col-md-6 col-xl-4 mt-4">
+                <p class="lead"><br/></p>
+                <img src="assets/bw.gif" />
+            </div>
+            <div class="col-md-6 col-xl-4 mt-4">
+                <p class="lead">Creating the simulated environment with Real2Sim2Real</p>
+                <img src="assets/stroke_library.gif" />
+            </div>
+            <div class="col-md-6 col-xl-4 mt-4">
+                <p class="lead">Replication of van Gogh's Self Portrait</p>
+                <img src="assets/timelapse.gif" />
+            </div>
+            <div class="col-md-6 col-xl-4 px-5 mt-4">
+                <p class="lead">FRIDA planning</p>
+                <img src="assets/van_gogh_sim.gif" />
+                <img src="assets/starry_sim.gif" />
+            </div>
+            <div class="col-md-6 col-xl-4 mt-4">
+                <p class="lead">Executing the plan</p>
+                <img src="assets/van_gogh.gif" />
+                <img src="assets/starry.gif" style="width:72%" />
+            </div>
+        </div>
+    </div>
+    <div style="background-image: url('assets/bw.gif');background-size:cover;background-position: center;">
+        <div class="container-fluid p-lg-5 mt-2">
+            <div class="row" style="margin-top:15rem;">
+                <div class="col">
+                    <p class="display-4">People</p>
+                </div>
+            </div>
+            <div class="row pt-5 text-center">
+                <div class="col-md-4" style="backdrop-filter: blur(2px);">
+                    <div class="portrait-backs"> </div>
+                    <div class="p-md-4">
+                        <img src="assets/peter.jpg" style="width: unset;height: 15rem;"/>
+                        <h3><b>Peter Schaldenbrand</b></h3>
+                        <div>PhD Student</div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="backdrop-filter: blur(2px);">
+                    <div class="portrait-backs"> </div>
+                    <div class="p-md-4">
+                        <img src="assets/jim.jpg" style="width: unset;height: 15rem;"/>
+                        <h3><b>Jim McCann</b></h3>
+                        <div>Assistant Professor</div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="backdrop-filter: blur(2px);">
+                    <div class="portrait-backs"> </div>
+                    <div class="p-md-4">
+                        <img src="assets/tahoe-jean-bw.jpg" style="width: unset;height: 15rem;"/>
+                        <h3><b>Jean Oh</b></h3>
+                        <div>Associate Research Professor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div style="max-height:40rem;overflow-y:scroll;" class="mx-auto">
+                    <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/FridaRobot?ref_src=twsrc%5Etfw">Tweets by FridaRobot</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
