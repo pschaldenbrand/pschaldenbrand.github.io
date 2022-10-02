@@ -44,7 +44,6 @@
     iframe, img {
         max-width: 100%;
         width: 100%;
-        max-height: 20rem;
     }
     .gif-container > div > div {
         padding-left: 0px;
@@ -53,7 +52,7 @@
     .portrait-backs {
         background: #0000005e;
         position: absolute;
-        width: 97%;
+        width: 92%;
         height: 100%;
         filter: blur(20px);
         z-index:-1;
@@ -64,25 +63,26 @@
 <body>
     <div class="banner">
         <div class="jumbotron" style="background-color:#0000003d">
-                <h1 class="display-4" style="font-weight:400">FRIDA: A Collaborative Robot Painter <!-- with a Differentiable, Real2Sim2Real Planning Environment --></h1>
+                <h1 class="display-4" style="font-weight:400">FRIDA: A Collaborative Robot Painter with a Differentiable, Real2Sim2Real Planning Environment</h1>
                 <p class="lead" style="font-weight:400">
                     Peter Schaldenbrand, James McCann, & Jean Oh<br/>
                     The Robotics Institute, Carnegie Mellon University
                 </p>
                 <!-- <hr class="my-4"> -->
+                <!-- <h4>Abstract</h4>
                 <p>
-                </p>
-                <p>
-                    FRIDA, a Framework and Robotics Initiative for Developing Arts, is an ongoing robot painting and creative artificial intelligence project at CMU developed by PhD student Peter Schaldenbrand and principal investigators James McCann and Jean Oh
-                </p>
-                <p>
-                    FRIDA can paint from multiple modes of inspiration from the artist in collaboration: reference images and language descripions in different styles given by example images. Composition can be influenced by a user drawn rough sketch.  FRIDA is open source and evolving.
-                </p>
+                    Painting is an artistic process of rendering visual content that achieves the high-level communication goals of an artist that may change dynamically throughout the creative process.
+                    In this paper, we present a Framework and Robotics Initiative for Developing Arts (FRIDA) that enables humans to produce paintings on canvases by collaborating with a painter robot using simple inputs such as language descriptions or images. FRIDA introduces several technical innovations for computationally modeling a creative painting process.
+                    First, we develop a fully differentiable simulation environment for painting, adopting the idea of real to simulation to real (real2sim2real). We show that our proposed simulated painting environment is higher fidelity to reality than existing simulation environments used for robot painting.
+                    Second, to model the evolving dynamics of a creative process, we develop a planning approach that can continuously optimize the painting plan based on the evolving canvas with respect to the high-level goals.
+                    In contrast to existing approaches where the content generation process and action planning are performed independently and sequentially, FRIDA adapts to the stochastic nature of using paint and a brush by continually re-planning and re-assessing its semantic goals based on its visual perception of the painting progress.
+                    We describe the details on the technical approach as well as the system integration.
+                </p> -->
             <a class="btn btn-info btn-lg m-2" href="#" role="button">
                 <img  style="width:32px" src="https://pbs.twimg.com/media/EcglfCHU4AA6-yj.png" height=32/>
-                ArXiv
+                ArXiv Coming Soon
             </a>
-            <a class="btn btn-info btn-lg m-2" href="https://colab.research.google.com/github/pschaldenbrand/Text2Video/blob/main/Text2Video.ipynb" role="button" target="_blank">
+            <a class="btn btn-info btn-lg m-2" href="https://colab.research.google.com/github/pschaldenbrand/Frida/blob/master/Frida.ipynb" role="button" target="_blank">
                 <img  style="width:32px" src="https://pbs.twimg.com/profile_images/1330956917951270912/DyIZtTA8_400x400.png" height=32/>
                 Colab Demo
             </a>
@@ -100,9 +100,156 @@
             </a> -->
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-justify">
+                <h4>Abstract</h4>
+                <p>
+                    Painting is an artistic process of rendering visual content that achieves the high-level communication goals of an artist that may change dynamically throughout the creative process.
+                    In this paper, we present a Framework and Robotics Initiative for Developing Arts (FRIDA) that enables humans to produce paintings on canvases by collaborating with a painter robot using simple inputs such as language descriptions or images. FRIDA introduces several technical innovations for computationally modeling a creative painting process.
+                    First, we develop a fully differentiable simulation environment for painting, adopting the idea of real to simulation to real (real2sim2real). We show that our proposed simulated painting environment is higher fidelity to reality than existing simulation environments used for robot painting.
+                    Second, to model the evolving dynamics of a creative process, we develop a planning approach that can continuously optimize the painting plan based on the evolving canvas with respect to the high-level goals.
+                    In contrast to existing approaches where the content generation process and action planning are performed independently and sequentially, FRIDA adapts to the stochastic nature of using paint and a brush by continually re-planning and re-assessing its semantic goals based on its visual perception of the painting progress.
+                    We describe the details on the technical approach as well as the system integration.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container-fluid py-5" style="background:white; color:black;">
+        <h1 class="text-center mb-4">How FRIDA works</h1>
+        <div class="row text-center" style="font-size:1.25rem;">
+            <div class="col-lg-3">
+                <p>We represent brush stroke shapes with 3 parameters: pressure, length, and bend.</p>
+                <img src="assets/stroke_model.svg" style="background:white;" />
+            </div>
+            <div class="col-lg-4">
+                <p>Real strokes are painted from randomly sampled brush stroke parameters.</p>
+                <img src="assets/stroke_library.gif" />
+            </div>
+            <div class="col-lg-5">
+                <p>FRIDA models the relationship between the robot's movement and the appearance of the brush strokes more realistically than other differentiable simulators, such as DiffVG.</p>
+                <img src="assets/stroke_real2sim.png" style="background: white; width:unset;"/>
+            </div>
+            <div class="col-12 my-5">
+                <p>Strokes are rendered onto an image using only differentiable operations.</p>
+                <img src="assets/stroke_rendering_process.png" class="px-lg-5" />
+            </div>
+            <div class="col-lg-4">
+                <p>Loss functions compare the rendered, simulated painting to multiple modalities of input such as text, style images, and reference images.</p>
+                <img src="assets/objective_functions.png"  />
+            </div>
+            <div class="col-lg-4">
+                <p>Using stochastic gradient descent, FRIDA modifies randomly initialized brush stroke plans to minimize these loss functions in its simulated environment.</p>
+                <img src="assets/van_gogh_sim.gif" />
+                <img src="assets/starry_sim.gif" />
+            </div>
+            <div class="col-lg-4 mt-auto">
+                <p>Once an initial plan is created, FRIDA begins to paint, periodically taking a picture of the current canvas and updating its plan to continue to decrease the loss functions.</p>
+                <img src="assets/van_gogh.gif" />
+                <img src="assets/starry.gif" />
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container-fluid py-5" style="background:white; color:black;">
+        <h1 class="text-center mb-4">How FRIDA works</h1>
+        <div class="row text-center" style="font-size:1.5rem;">
+            <div class="col-lg-8 mx-auto mt-5">
+                <p>We represent brush stroke shapes with 3 parameters: pressure, length, and bend.</p>
+                <img src="assets/stroke_model.svg" style="background:white;" />
+            </div>
+            <div class="col-lg-8 mx-auto my-5">
+                <p>Real strokes are painted from randomly sampled brush stroke parameters.</p>
+                <img src="assets/stroke_library.gif" />
+            </div>
+            <div class="col-lg-8 mx-auto my-5">
+                <p>FRIDA models the relationship between the robot's movement and the appearance of the brush strokes more realistically than other differentiable simulators, such as DiffVG.</p>
+                <img src="assets/stroke_real2sim.png" style="background: white; width:unset;"/>
+            </div>
+            <div class="col-lg-8 my-4 mx-auto my-5">
+                <p>Strokes are rendered onto an image using only differentiable operations.</p>
+                <img src="assets/stroke_rendering_process.png" />
+            </div>
+            <div class="col-lg-8 mx-auto my-5">
+                <p>Loss functions compare the rendered, simulated painting to multiple modalities of input such as text, style images, and reference images.</p>
+                <img src="assets/objective_functions.png"  />
+            </div>
+            <div class="col-lg-5 mx-auto mt-auto p-lg-4">
+                <p>Using stochastic gradient descent, FRIDA modifies randomly initialized brush stroke plans to minimize these loss functions in its simulated environment.</p>
+                <img src="assets/van_gogh_sim.gif" />
+                <img src="assets/starry_sim.gif" />
+            </div>
+            <div class="col-lg-5 mx-auto mt-5 p-lg-4">
+                <p>Once an initial plan is created, FRIDA begins to paint, periodically taking a picture of the current canvas and updating its plan to continue to decrease the loss functions.</p>
+                <img src="assets/van_gogh.gif" />
+                <img src="assets/starry.gif" />
+            </div>
+            <div class="col-lg-6 mt-4">
+                <!-- <p class="lead">FRIDA working in our lab at CMU</p> -->
+                <img src="assets/walk_in.gif" />
+            </div>
+            <div class="col-lg-6 mt-4">
+                <!-- <p class="lead">Replication of van Gogh's Self Portrait</p> -->
+                <img src="assets/timelapse.gif" />
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pt-4">
+        <h1 class="text-center mb-4">Gallery</h1>
+        <h2 class="text-center">Painting from Reference Images</h2>
+        <div class="row text-center">
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/frida.jpg" /><br/>
+                <img src="assets/paintings/frida_painting.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/pgh.jpg" /><br/>
+                <img src="assets/paintings/pgh_painting.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/starry.jpg" /><br/>
+                <img src="assets/paintings/starry_painting.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/frida_bw.jpg" /><br/>
+                <img src="assets/paintings/frida_bw_painting.png" />
+            </div>
+        </div>
+        <h2 class="text-center my-3">Painting from Style and Language Description</h2>
+        <div class="row text-center">
+            <div class="col-sm-3 mx-auto mb-5">
+                <h4>"A frog <br/>ballerina"</h4>
+                <h3>+</h3>
+                <img src="assets/paintings/frog_style.jpg" /><br/>
+                <h3>=</h3>
+                <img src="assets/paintings/frog_ballerina.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <h4>"A painting of Harvey Milk"</h4>
+                <h3>+</h3>
+                <img src="assets/paintings/van_gogh2.jpg" /><br/>
+                <h3>=</h3>
+                <img src="assets/paintings/harvey_van_gogh.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <h4>"A painting of Harvey Milk"</h4>
+                <h3>+</h3>
+                <img src="assets/paintings/alice_neel.jpeg" /><br/>
+                <h3>=</h3>
+                <img src="assets/paintings/harvey_alice_neel.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <h4>"A portrait of a robot artist"</h4>
+                <h3>+</h3>
+                <img src="assets/paintings/alice_neel.jpeg" /><br/>
+                <h3>=</h3>
+                <img src="assets/paintings/robot_artist_alice.png" />
+            </div>
+        </div>
+    </div>
 
 
-    <div class="container-fluid gif-container">
+    <!-- <div class="container-fluid gif-container">
         <div class="row text-center">
             <div class="col-md-6 col-xl-4 mt-4">
                 <p class="lead">FRIDA working in our lab at CMU</p>
@@ -120,49 +267,45 @@
                 <p class="lead">Replication of van Gogh's Self Portrait</p>
                 <img src="assets/timelapse.gif" />
             </div>
-            <div class="col-md-6 col-xl-4 px-5 mt-4">
-                <p class="lead">FRIDA planning</p>
-                <img src="assets/van_gogh_sim.gif" />
-                <img src="assets/starry_sim.gif" />
-            </div>
-            <div class="col-md-6 col-xl-4 mt-4">
-                <p class="lead">Executing the plan</p>
-                <img src="assets/van_gogh.gif" />
-                <img src="assets/starry.gif" style="width:72%" />
-            </div>
         </div>
-    </div>
+    </div> -->
     <div style="background-image: url('assets/bw.gif');background-size:cover;background-position: center;">
         <div class="container-fluid p-lg-5 mt-2">
             <div class="row" style="margin-top:15rem;">
                 <div class="col">
-                    <p class="display-4">People</p>
+                    <p class="display-4">Authors</p>
                 </div>
             </div>
             <div class="row pt-5 text-center">
                 <div class="col-md-4" style="backdrop-filter: blur(2px);">
-                    <div class="portrait-backs"> </div>
-                    <div class="p-md-4">
-                        <img src="assets/peter.jpg" style="width: unset;height: 15rem;"/>
-                        <h3><b>Peter Schaldenbrand</b></h3>
-                        <div>PhD Student</div>
-                    </div>
+                    <a href="https://pschaldenbrand.github.io/" target="_blank">
+                        <div class="portrait-backs"> </div>
+                        <div class="p-md-4" style="color:white;">
+                            <img src="assets/peter.jpg" style="width: unset;height: 15rem;"/>
+                            <h3><b>Peter Schaldenbrand</b></h3>
+                            <div>PhD Student</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-4" style="backdrop-filter: blur(2px);">
-                    <div class="portrait-backs"> </div>
-                    <div class="p-md-4">
-                        <img src="assets/jim.jpg" style="width: unset;height: 15rem;"/>
-                        <h3><b>Jim McCann</b></h3>
-                        <div>Assistant Professor</div>
-                    </div>
+                    <a href="http://www.cs.cmu.edu/~jmccann/" target="_blank">
+                        <div class="portrait-backs"> </div>
+                        <div class="p-md-4" style="color:white;">
+                            <img src="assets/jim.jpg" style="width: unset;height: 15rem;"/>
+                            <h3><b>Jim McCann</b></h3>
+                            <div>Assistant Professor</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-4" style="backdrop-filter: blur(2px);">
-                    <div class="portrait-backs"> </div>
-                    <div class="p-md-4">
-                        <img src="assets/tahoe-jean-bw.jpg" style="width: unset;height: 15rem;"/>
-                        <h3><b>Jean Oh</b></h3>
-                        <div>Associate Research Professor</div>
-                    </div>
+                    <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">
+                        <div class="portrait-backs"> </div>
+                        <div class="p-md-4" style="color:white;">
+                            <img src="assets/tahoe-jean-bw.jpg" style="width: unset;height: 15rem;"/>
+                            <h3><b>Jean Oh</b></h3>
+                            <div>Associate Research Professor</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
