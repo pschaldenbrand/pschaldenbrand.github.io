@@ -63,6 +63,9 @@
     .text-prompt {
         font-family: serif;
     }
+    #how-frida-works img {
+        max-width: 30rem;
+    }
     </style>
 </head>
 
@@ -84,9 +87,9 @@
                     In contrast to existing approaches where the content generation process and action planning are performed independently and sequentially, FRIDA adapts to the stochastic nature of using paint and a brush by continually re-planning and re-assessing its semantic goals based on its visual perception of the painting progress.
                     We describe the details on the technical approach as well as the system integration.
                 </p> -->
-            <a class="btn btn-info btn-lg m-2" href="#" role="button">
+            <a class="btn btn-info btn-lg m-2" href="https://arxiv.org/abs/2210.00664" target="_blank" role="button">
                 <img  style="width:32px" src="https://pbs.twimg.com/media/EcglfCHU4AA6-yj.png" height=32/>
-                ArXiv Coming Soon
+                ArXiv
             </a>
             <a class="btn btn-info btn-lg m-2" href="https://colab.research.google.com/github/pschaldenbrand/Frida/blob/master/Frida.ipynb" role="button" target="_blank">
                 <img  style="width:32px" src="https://pbs.twimg.com/profile_images/1330956917951270912/DyIZtTA8_400x400.png" height=32/>
@@ -157,7 +160,7 @@
         </div>
     </div> -->
 
-    <div class="container-fluid py-5" style="background:white; color:black;">
+    <div class="container-fluid py-5" id="how-frida-works" style="background:white; color:black;">
         <h1 class="text-center mb-4">How FRIDA works</h1>
         <div class="row text-center" style="font-size:1.5rem;">
             <div class="col-lg-8 mx-auto mt-5">
@@ -178,7 +181,7 @@
             </div>
             <div class="col-lg-8 my-4 mx-auto my-5">
                 <p>Strokes are rendered onto an image using only differentiable operations.</p>
-                <img src="assets/stroke_rendering_process.png" />
+                <img src="assets/stroke_rendering_process.png" style="max-width: unset;"/>
             </div>
             <div class="col-lg-8 mx-auto my-5">
                 <p>Loss functions compare the rendered, simulated painting to multiple modalities of input such as text, style images, and reference images.</p>
@@ -206,25 +209,6 @@
     </div>
     <div class="container-fluid pt-4">
         <h1 class="text-center mb-4">Gallery</h1>
-        <h2 class="text-center">Painting from Reference Images</h2>
-        <div class="row text-center">
-            <div class="col-sm-3 mx-auto mb-5">
-                <img src="assets/paintings/frida.jpg" class="source-img"/><br/>
-                <img src="assets/paintings/frida_painting.png" />
-            </div>
-            <div class="col-sm-3 mx-auto mb-5">
-                <img src="assets/paintings/pgh.jpg" class="source-img" /><br/>
-                <img src="assets/paintings/pgh_painting.png" />
-            </div>
-            <div class="col-sm-3 mx-auto mb-5">
-                <img src="assets/paintings/starry.jpg" class="source-img" /><br/>
-                <img src="assets/paintings/starry_painting.png" />
-            </div>
-            <div class="col-sm-3 mx-auto mb-5">
-                <img src="assets/paintings/frida_bw.jpg" class="source-img" /><br/>
-                <img src="assets/paintings/frida_bw_painting.png" />
-            </div>
-        </div>
         <h2 class="text-center my-3">Painting from Style and Language Description</h2>
         <div class="row text-center">
             <div class="col-sm-3 mx-auto mb-5">
@@ -288,6 +272,25 @@
             </div>
             <div class="col-3 my-auto">
                 <img src="assets/paintings/dance_painting.png" />
+            </div>
+        </div>
+        <h2 class="text-center">Painting from Reference Images</h2>
+        <div class="row text-center">
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/frida.jpg" class="source-img"/><br/>
+                <img src="assets/paintings/frida_painting.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/pgh.jpg" class="source-img" /><br/>
+                <img src="assets/paintings/pgh_painting.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/starry.jpg" class="source-img" /><br/>
+                <img src="assets/paintings/starry_painting.png" />
+            </div>
+            <div class="col-sm-3 mx-auto mb-5">
+                <img src="assets/paintings/frida_bw.jpg" class="source-img" /><br/>
+                <img src="assets/paintings/frida_bw_painting.png" />
             </div>
         </div>
     </div>
