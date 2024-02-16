@@ -1,0 +1,325 @@
+
+<html>
+<head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting</title>
+
+    <meta property="og:image" content="resources/teaser.jpeg"/>
+    <meta property="og:title" content="CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting"/>
+    <meta property="og:description" content="CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- <link rel="stylesheet" href="styles/image_card_flip.css"> -->
+    <link rel="stylesheet" href="styles/image_card_fader.css">
+    <link rel="stylesheet" href="styles/image_card_slider.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col-lg-8 mx-auto">
+            <center><h1>CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting</h1></center>
+            
+            <h2>
+                <span style="font-size:24px">
+                    <a href="https://pschaldenbrand.github.io/">Peter Schaldenbrand</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://gauravparmar.com/">Gaurav Parmar</a>&nbsp;&nbsp;&nbsp;
+                    <br>
+                    <a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.cs.cmu.edu/~jmccann/">James McCann</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.cs.cmu.edu/~./jeanoh/">Jean Oh</a>&nbsp;&nbsp;&nbsp;
+                </span>
+            </h2>
+            <h2>
+                <span style="font-size:24px">
+                    <p>ICRA 2024</p>
+                </span>
+            </h2>
+            
+            <center>
+                <!-- <span style="font-size:24px"><a href='TODO'>[Paper]</a></span> -->
+                <span style="font-size:24px; margin-left: 0px;"><a href=''>[Paper Coming Soon]</a> |</span>
+                <span style="font-size:24px; margin-left: 0px;"><a href='https://github.com/cmubig/Frida'>[Code]</a> |</span>
+                <span style="font-size:24px; margin-left: 0px;"><a href=''>[Demo]</a> </span>
+            </center>
+        </div>
+    </div>
+    <br>
+    
+    <!-- <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <center>
+                <img class="img-fluid" src="./assets/more_results.svg" style="width:100%;"/>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    Given a text description, CoFRIDA is able to <i>Co-Paint</i> 
+                    i.e. add content to canvases that engages with what is currently painted or drawn without destroying it.
+                </p>
+            </center>
+        </div>
+    </div> -->
+
+    <div class="row mt-4">
+        <div class="col-lg-9 mx-auto">
+            <!-- <img class="img-fluid" src="./assets/cofrida_bee.gif" style="width:100%"/> -->
+            <!-- <img class="img-fluid" src="./assets/teaser.gif" style="width:100%"/> -->
+            <!-- <video class="img-fluid" src="./assets/teaser.mp4" style="width:100%"/> -->
+            <video class="img-fluid" controls  autoplay muted>
+                <source src="./assets/teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+          
+    
+    <!-- <div class="row">
+        <div class="col-lg-8 mx-auto" style="text-align: justify;">
+            <p class="mb-0"> 
+                Creating real-world artwork:
+            </p>
+                <ol>
+                    <li>requires iterations where content from an existing canvas is modified</li>
+                    <li>is limited by the materials available (e.g., cannot erase markers)</li>
+                </ol>
+            <p>
+                Pixel-based image generators, such as Dall-E or Stable Diffusion, do not understand 
+                the constraints of real-world art materials and tend to overwrite or generate content that is not 
+                possible to create with given art materials.
+                We introduce <b> CoFRIDA</b> which, given a text description, create painting plans that 
+                (1) use the current content on the canvas to create new content 
+                and (2) are possible to achieve with heavily constrained materials, such as Sharpies and acrylic paint.
+            </p>
+        </div>
+    </div> -->
+    
+
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1>Abstract</h1>
+            <p style="text-align: justify;"> 
+                Prior robot painting and drawing work, such as FRIDA, has focused on decreasing the sim-to-real gap 
+                and expanding input modalities for users, but the interaction with these systems generally exists only in the input stages. 
+                To support interactive, human-robot collaborative painting, we introduce the Collaborative FRIDA (CoFRIDA) robot painting framework,
+                which can <i>co-paint</i> by modifying and engaging with content already painted by a human collaborator. 
+                To improve text-image alignment--FRIDA's major weakness--our system uses pre-trained text-to-image models; 
+                however, pre-trained models in the context of real-world co-painting do not perform well because they 
+                (1) do not understand the constraints and abilities of the robot and 
+                (2) cannot perform co-painting without making unrealistic edits to the canvas and overwriting content.
+                We propose a self-supervised fine-tuning procedure that can tackle both issues, allowing the use of pre-trained 
+                state-of-the-art text-image alignment models with robots to enable co-painting in the physical world.
+                Our open-source approach, CoFRIDA, creates paintings and drawings that match the input text prompt more clearly than FRIDA,
+                both from a blank canvas and one with human created work. More generally, our fine-tuning procedure successfully encodes 
+                the robot's constraints and abilities into a pre-trained text-to-image model, showcasing promising results as an effective method for reducing sim-to-real gaps.   
+            </p>
+        </div>
+    </div>
+
+    <hr>
+    
+    
+    <!-- <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h2><b>Co-Painting</b> versus Inpainting and Image-to-Image Translation</h2>
+            <center>
+                <img class="img-fluid" src="./assets/copainting_vs_all.png" style="width:100%;max-width:900px"/>
+            </center>
+        </div>
+    </div>
+    
+    <hr/> -->
+    
+    
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h1>CoFRIDA Overview</h1>
+            <center>
+                <img class="img-fluid" src="./assets/method.svg" style="width:100%;max-width:900px"/>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <b>CoFRIDA Overview</b> 
+                    <!-- <b style="font-size:2rem;">Learning Robotic Constraints</b>  -->
+                    Offline, we fine-tune a pre-trained Instruct-Pix2Pix model on our self-supervised data.
+                    Online, the user can either draw or give the robot a text description. 
+                    The Co-Painting Module takes as input the current canvas and text description 
+                    to generate a pixel prediction of how the robot should finish the painting using 
+                    the fine-tuned Instruct-Pix2Pix model. 
+                    FRIDA predicts actions for the robot to create this pixel image 
+                    and simulates how the canvas will look after the actions are taken. 
+                    A robot (XArm, Franka, or Sawyer) executes the actions, updating the canvas.
+                    This process is repeated until the user is satisfied.
+                </p>
+            </center>
+        </div>
+    </div>
+
+    <br/>
+    <hr/>
+
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h1>Self-Supervised Fine-Tuning</h1>
+            <center>
+                <!-- <img class="img-fluid center" src="./assets/self_supervised.gif" style="width:100%;max-width:900px;border: 1px solid black;"/> -->
+                <img class="img-fluid center" src="./assets/self_supervised_short.gif" style="width:100%;max-width:900px;"/>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <b>Self-Supervised Fine-Tuning</b> 
+                    Images from the CoCo dataset are converted into sketches or paintings using FRIDA's simulation.
+                    Strokes are removed to form partials sketches/paintings.
+                    Instruct-Pix2Pix is fine-tuned to predict the full sketch/painting conditioned on the partial and the caption. 
+                </p>
+            </center>
+        </div>
+    </div>
+
+    <br/>
+    <hr/>
+    
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h1>Learning Robotic Constraints</h1>
+            <center>
+                <img class="img-fluid" src="./assets/constraints.svg" style="width:100%;max-width:900px"/>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <b>Real-World Image Synthesis</b> 
+                    As opposed to pixel-based image synthesis, real-world image creation has limitations and constraints. 
+                    For example, a robot may only have a Sharpie, be unable to erase, must use a canvas that already has 
+                    paint or marker on it, and must act with limited time or finite number of actions.
+                    Our self-supervised fine-tuning technique is able to encode these robotic constraints into 
+                    pre-trained image generators.
+                </p>
+            </center>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <!-- <h2>Learning Robotic Constraints</h2> -->
+            <center>
+                <img class="img-fluid" src="./assets/learnt_robotics.svg" style="width:100%;max-width:900px"/>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <b>Encoding Real-World Constraints in Foundation Model</b> 
+                    Pretrained models tend to generate images that cannot be recreated with the tools available to the robot.
+                    The top left three images were generated by Stable Diffusion and cannot be replicated 
+                    accurately due to various real-world, robotic constraints.
+                    Our self-supervised fine-tuning successfully encodes the constraints of the robot, such that 
+                    generated images can be faithfully reproduced by the robot with little loss in meaning (right three images).
+                </p>
+            </center>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h1>CoFRIDA Results</h1>
+            <center>
+                <img class="img-fluid" src="./assets/more_results.svg" style="width:100%;max-width:900px"/>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <b>Co-Painting with CoFRIDA</b> 
+                    CoFRIDA is able to add content to canvases that engages with what is currently painted without destroying it.
+                    Even when CoFRIDA is trained on, for example only Sharpie drawings, it is capable of generalizing when 
+                    a user draws/paints with an alternative media, like watercolors above.
+                </p>
+            </center>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    
+    <div class="row">
+        <div class="col-2 col-md-2 ml-auto">
+            <img src="./assets/paper_preview.png" class="img-fluid" 
+                    style="border: 1px solid #BBB;box-shadow: 10px 5px 5px 0px #bbbbbb61; max-height:15rem;" />
+        </div>
+        <div class="col-9 col-md-6 mr-auto"style="font-family:serif">
+            <h4>Paper</h4>
+            <div>ArXiv (Coming Soon)</div>
+            <h4 class="mt-3">Citation</h4>
+            <div>
+                Peter Schaldenbrand, Gaurav Parmar, Jun-Yan Zhu, James McCann, & Jean Oh. 
+                "CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting."
+                2024 IEEE International Conference on Robotics and Automation (ICRA). IEEE, 2024.
+            </div>
+            <h4 class="mt-3">
+                <a href="assets/cofrida_bibtex.txt">BibTex</a>
+            </h4>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <b>Acknowledgement</b> - This work was supported by NSF IIS-2112633 
+            and the Technology Innovation Program (20018295, Meta-human: 
+            a virtual cooperation platform for a specialized industrial services) 
+            funded By the Ministry of Trade, Industry & Energy (MOTIE, Korea).
+        </div>
+    </div>
+
+
+
+
+    <hr>
+
+    <hr>
+    <script>
+        // $(".flip-card").click(function() {
+        //     console.log("flipping")
+        //   $(this).toggleClass("flipped");
+        // });
+
+        // $(".flip-card").mouseenter(function() {
+        //     console.log("flipping")
+        //   $(this).toggleClass("flipped");
+        // });
+
+        // $(".flip-card").mouseleave(function() {
+        //     console.log("flipping")
+        //   $(this).toggleClass("flipped");
+        // });
+
+        $(".flip-card").mouseenter(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("out");
+            $(div_front).removeClass("in");
+
+            $(div_back).addClass("in");
+            $(div_back).removeClass("out");
+
+        });
+
+        $(".flip-card").mouseleave(function() {
+            console.log("fading in")
+            div_back = $(this).children().children()[1]
+            div_front = $(this).children().children()[0]
+            // console.log($(this).children("div.flip-card-back"))
+            console.log(div_back)
+            $(div_front).addClass("in");
+            $(div_front).removeClass("out");
+
+            $(div_back).addClass("out");
+            $(div_back).removeClass("in");
+
+        });
+
+
+    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>    
+
+</div> <!-- container-fluid -->
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+@inproceedings{schaldenbrand2024cofrida,
+    title={CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting},
+    author={Schaldenbrand, Peter and Parmar, Gaurav and Zhu, Jun-Yan and McCann, James and Oh, Jean},
+    booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)},
+    year={2024},
+    organization={IEEE}
+}
