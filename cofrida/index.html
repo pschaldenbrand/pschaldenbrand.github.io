@@ -233,6 +233,31 @@
     <hr/>
     
     <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h1>Survey Results</h1>
+            <center>
+                <img class="img-fluid" src="./assets/survey_example.svg" style="width:100%;max-width:900px"/>
+                <img class="img-fluid" src="./assets/user_survey_results.svg" style="width:100%;max-width:900px"/>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <b>Completing a Given Canvas</b> 
+                    We tested CoFRIDA's ability to add strokes to a given canvas conditioned on a text prompt. 
+                    Partial drawings were created by generating images using Stable Diffusion conditioned on text from the Parti Prompt dataset,
+                    then simulated using only a few strokes with FRIDA.
+                    FRIDA, CoFRIDA without fine-tuning, and CoFRIDA then completed the drawing with the same text prompt. 
+                    Participants in our survey were shown the text along with a CoFRIDA drawing and either FRIDA or CoFRIDA w/o fine-tuning. 
+                    Participants selected which image, neither, or both fit the text description best.
+                    24 unique participants found CoFRIDA's complete drawings to fit the text description more closely than baseline methods.
+                </p>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <a href="./assets/cofrida_survey_items.pdf">All images used in our survey can be seen here</a>
+                </p>
+            </center>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    
+    <div class="row">
         <div class="col-2 col-md-2 ml-auto">
             <img src="./assets/paper_preview.png" class="img-fluid" 
                     style="border: 1px solid #BBB;box-shadow: 10px 5px 5px 0px #bbbbbb61; max-height:15rem;" />

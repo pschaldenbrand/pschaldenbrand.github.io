@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1380"
+   height="385"
+   overflow="hidden"
+   version="1.1"
+   id="svg62"
+   sodipodi:docname="user_survey_results.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs66" />
+  <sodipodi:namedview
+     id="namedview64"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.32777778"
+     inkscape:cx="961.01695"
+     inkscape:cy="360"
+     inkscape:window-width="1920"
+     inkscape:window-height="1129"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg62" />
+  <g
+     id="g6"
+     transform="translate(-73.220339,-137.28814)">
+    <path
+       d="m 119.5,163.5 v 290 m 128,-290 v 290 m 129,-290 v 290 m 128,-290 v 290 m 129,-290 v 290 m 128,-290 v 290 m 129,-290 v 290 m 128,-290 v 290 m 128,-290 v 290 m 129,-290 v 290 m 128,-290 v 290"
+       stroke="#d9d9d9"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       id="path4" />
+  </g>
+  <g
+     id="g10"
+     transform="translate(-73.220339,-137.28814)">
+    <path
+       d="M 675,444 H 120 V 318 H 675 Z M 688,299 H 120 V 173 h 568 z"
+       fill="#add0e5"
+       id="path8" />
+  </g>
+  <g
+     id="g14"
+     transform="translate(-73.220339,-137.28814)">
+    <path
+       d="M 858,444 H 675 V 318 H 858 Z M 944,299 H 688 V 173 h 256 z"
+       fill="#ff9797"
+       id="path12" />
+  </g>
+  <g
+     id="g18"
+     transform="translate(-73.220339,-137.28814)">
+    <path
+       d="M 1263,444 H 858 V 318 h 405 z M 1232,299 H 944 V 173 h 288 z"
+       fill="#c5c5c5"
+       id="path16" />
+  </g>
+  <g
+     id="g22"
+     transform="translate(-73.220339,-137.28814)">
+    <path
+       d="M 1404,444 H 1263 V 318 h 141 z m 0,-145 H 1232 V 173 h 172 z"
+       fill="#959595"
+       id="path20" />
+  </g>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text24"
+     x="265.52567"
+     y="110.71186">CoFRIDA</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text26"
+     x="258.32565"
+     y="254.71187">CoFRIDA</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text28"
+     x="698.16266"
+     y="110.71186">FRIDA</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text30"
+     x="626.51868"
+     y="217.71187">CoFRIDA</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text32"
+     x="666.08569"
+     y="256.71185">w/o</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text34"
+     x="617.59167"
+     y="294.71185">fine</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text36"
+     x="667.34564"
+     y="294.71185">-</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text38"
+     x="678.55865"
+     y="294.71185">tuning</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text40"
+     x="935.78967"
+     y="256.71185">Neither</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text42"
+     x="1227.6497"
+     y="256.71185">Both</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text44"
+     x="965.02966"
+     y="110.71186">Neither</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="24px"
+     id="text46"
+     x="30.349661"
+     y="340.71185">0%</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="24px"
+     id="text48"
+     x="279.62366"
+     y="340.71185">20%</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="24px"
+     id="text50"
+     x="536.61865"
+     y="340.71185">40%</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="24px"
+     id="text52"
+     x="793.28967"
+     y="340.71185">60%</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="24px"
+     id="text54"
+     x="1050.3596"
+     y="340.71185">80%</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="24px"
+     id="text56"
+     x="1300.3297"
+     y="340.71185">100%</text>
+  <text
+     font-family="'Arial Nova Light', 'Arial Nova Light_MSFontService', sans-serif"
+     font-weight="300"
+     font-size="32px"
+     id="text58"
+     x="1212.4497"
+     y="110.71186">Both</text>
+</svg>
