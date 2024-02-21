@@ -16,11 +16,26 @@
     <link rel="stylesheet" href="styles/image_card_slider.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="./assets/frida.ico">
+
+    <style>
+        body {
+            font-family: "Raleway"
+        }
+        hr {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 
 
 <body>
-<div class="container-fluid">
+<div class="container-fluid" style="max-width:1300px">
     <div class="row mt-4">
         <div class="col-lg-8 mx-auto">
             <center><h1>CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting</h1></center>
@@ -64,10 +79,7 @@
     </div> -->
 
     <div class="row mt-4">
-        <div class="col-lg-9 mx-auto">
-            <!-- <img class="img-fluid" src="./assets/cofrida_bee.gif" style="width:100%"/> -->
-            <!-- <img class="img-fluid" src="./assets/teaser.gif" style="width:100%"/> -->
-            <!-- <video class="img-fluid" src="./assets/teaser.mp4" style="width:100%"/> -->
+        <div class="col-12 mx-auto" style="text-align:center;">
             <video class="img-fluid" controls  autoplay muted>
                 <source src="./assets/teaser.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -115,17 +127,17 @@
                 both from a blank canvas and one with human created work. More generally, our fine-tuning procedure successfully encodes 
                 the robot's constraints and abilities into a pre-trained text-to-image model, showcasing promising results as an effective method for reducing sim-to-real gaps.   
             </p>
+            <hr/>
         </div>
     </div>
 
-    <hr>
     
     
     <!-- <div class="row">
         <div class="col-lg-9 mx-auto">
             <h2><b>Co-Painting</b> versus Inpainting and Image-to-Image Translation</h2>
             <center>
-                <img class="img-fluid" src="./assets/copainting_vs_all.png" style="width:100%;max-width:900px"/>
+                <img class="img-fluid" src="./assets/copainting_vs_all.png" style="width:100%;"/>
             </center>
         </div>
     </div>
@@ -134,12 +146,11 @@
     
     
     <br/>
-    <br/>
     <div class="row">
         <div class="col-lg-9 mx-auto">
             <h1>CoFRIDA Overview</h1>
             <center>
-                <img class="img-fluid" src="./assets/method.svg" style="width:100%;max-width:900px"/>
+                <img class="img-fluid" src="./assets/method.svg" style="width:100%;"/>
                 <p style="width:100%;max-width:1000px;text-align: justify;">
                     <b>CoFRIDA Overview</b> 
                     <!-- <b style="font-size:2rem;">Learning Robotic Constraints</b>  -->
@@ -153,19 +164,18 @@
                     A robot (XArm, Franka, or Sawyer) executes the actions, updating the canvas.
                     This process is repeated until the user is satisfied.
                 </p>
+                <hr/>
             </center>
         </div>
     </div>
 
-    <br/>
-    <hr/>
 
     <div class="row">
         <div class="col-lg-9 mx-auto">
             <h1>Self-Supervised Fine-Tuning</h1>
             <center>
-                <!-- <img class="img-fluid center" src="./assets/self_supervised.gif" style="width:100%;max-width:900px;border: 1px solid black;"/> -->
-                <img class="img-fluid center" src="./assets/self_supervised_short.gif" style="width:100%;max-width:900px;"/>
+                <!-- <img class="img-fluid center" src="./assets/self_supervised.gif" style="width:100%;;border: 1px solid black;"/> -->
+                <img class="img-fluid center" src="./assets/self_supervised_short.gif" style="width:100%;;"/>
                 <p style="width:100%;max-width:1000px;text-align: justify;">
                     <b>Self-Supervised Fine-Tuning</b> 
                     Images from the CoCo dataset are converted into sketches or paintings using FRIDA's simulation.
@@ -173,17 +183,16 @@
                     Instruct-Pix2Pix is fine-tuned to predict the full sketch/painting conditioned on the partial and the caption. 
                 </p>
             </center>
+            <hr/>
         </div>
     </div>
 
-    <br/>
-    <hr/>
     
     <div class="row">
         <div class="col-lg-9 mx-auto">
             <h1>Learning Robotic Constraints</h1>
             <center>
-                <img class="img-fluid" src="./assets/constraints.svg" style="width:100%;max-width:900px"/>
+                <img class="img-fluid" src="./assets/constraints.svg" style="width:100%;"/>
                 <p style="width:100%;max-width:1000px;text-align: justify;">
                     <b>Real-World Image Synthesis</b> 
                     As opposed to pixel-based image synthesis, real-world image creation has limitations and constraints. 
@@ -200,7 +209,7 @@
         <div class="col-lg-9 mx-auto">
             <!-- <h2>Learning Robotic Constraints</h2> -->
             <center>
-                <img class="img-fluid" src="./assets/learnt_robotics.svg" style="width:100%;max-width:900px"/>
+                <img class="img-fluid" src="./assets/learnt_robotics.svg" style="width:100%;"/>
                 <p style="width:100%;max-width:1000px;text-align: justify;">
                     <b>Encoding Real-World Constraints in Foundation Model</b> 
                     Pretrained models tend to generate images that cannot be recreated with the tools available to the robot.
@@ -210,16 +219,15 @@
                     generated images can be faithfully reproduced by the robot with little loss in meaning (right three images).
                 </p>
             </center>
+            <hr/>
         </div>
     </div>
-    <br/>
-    <hr/>
     
     <div class="row">
         <div class="col-lg-9 mx-auto">
             <h1>CoFRIDA Results</h1>
             <center>
-                <img class="img-fluid" src="./assets/more_results.svg" style="width:100%;max-width:900px"/>
+                <img class="img-fluid" src="./assets/more_results.svg" style="width:100%;"/>
                 <p style="width:100%;max-width:1000px;text-align: justify;">
                     <b>Co-Painting with CoFRIDA</b> 
                     CoFRIDA is able to add content to canvases that engages with what is currently painted without destroying it.
@@ -227,17 +235,16 @@
                     a user draws/paints with an alternative media, like watercolors above.
                 </p>
             </center>
+            <hr/>
         </div>
     </div>
-    <br/>
-    <hr/>
     
     <div class="row">
         <div class="col-lg-9 mx-auto">
             <h1>Survey Results</h1>
             <center>
-                <img class="img-fluid" src="./assets/survey_example.svg" style="width:100%;max-width:900px"/>
-                <img class="img-fluid" src="./assets/user_survey_results.svg" style="width:100%;max-width:900px"/>
+                <img class="img-fluid" src="./assets/survey_example.svg" style="width:100%;"/>
+                <img class="img-fluid" src="./assets/user_survey_results.svg" style="width:100%;"/>
                 <p style="width:100%;max-width:1000px;text-align: justify;">
                     <b>Completing a Given Canvas</b> 
                     We tested CoFRIDA's ability to add strokes to a given canvas conditioned on a text prompt. 
@@ -246,16 +253,70 @@
                     FRIDA, CoFRIDA without fine-tuning, and CoFRIDA then completed the drawing with the same text prompt. 
                     Participants in our survey were shown the text along with a CoFRIDA drawing and either FRIDA or CoFRIDA w/o fine-tuning. 
                     Participants selected which image, neither, or both fit the text description best.
-                    24 unique participants found CoFRIDA's complete drawings to fit the text description more closely than baseline methods.
+                    24 unique participants found CoFRIDA's complete drawings fit the text description more closely than baseline methods.
                 </p>
                 <p style="width:100%;max-width:1000px;text-align: justify;">
                     <a href="./assets/cofrida_survey_items.pdf">All images used in our survey can be seen here</a>
                 </p>
             </center>
+            <hr/>
         </div>
     </div>
-    <br/>
-    <hr/>
+
+    
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h1>More Results</h1>
+            <center>
+                <video class="img-fluid" loop  autoplay muted>
+                    <source src="./assets/long.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="width:100%;max-width:1000px;">
+                    <b>Never-Ending Canvas</b> 
+                    By continuously scrolling a paper in CoFRIDA's view, a never-ending drawing can be created.
+                </p>
+            </center>
+            <hr/>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <!-- <h1>Survey Results</h1> -->
+            <center>
+                <video class="img-fluid" loop  autoplay muted>
+                    <source src="./assets/aliens.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="width:100%;max-width:1000px;">
+                    <b>Mixed-Media</b> 
+                    Even when CoFRIDA only has a black marker and is trained on these images, it is able to recognize and plan with
+                    color content. In this example, a person paints using watercolors and collaborates with the robot.
+                </p>
+            </center>
+            <hr/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <!-- <h1>Survey Results</h1> -->
+            <center>
+                <video class="img-fluid" loop  autoplay muted>
+                    <source src="./assets/cat_man_house.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p style="width:100%;max-width:1000px;text-align: justify;">
+                    <b>Changing the Meaning of an Existing Drawing Completely</b> 
+                    CoFRIDA tries to add content to match the input text description given the current canvas. 
+                    In this example, the current canvas content differs greatly from the given text description.
+                    CoFRIDA is able to alter the existing drawing to match the new meaning of the input text description.
+                </p>
+            </center>
+            <hr/>
+        </div>
+    </div>
     
     <div class="row">
         <div class="col-2 col-md-2 ml-auto">
@@ -276,24 +337,20 @@
             </h4>
         </div>
     </div>
-    <br/>
-    <hr/>
     
     <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <b>Acknowledgement</b> - This work was supported by NSF IIS-2112633 
+        <div class="col-lg-10 mx-auto">
+            <b>Acknowledgement</b> - This work was partly supported by NSF IIS-2112633, the Packard Fellowship, 
             and the Technology Innovation Program (20018295, Meta-human: 
             a virtual cooperation platform for a specialized industrial services) 
             funded By the Ministry of Trade, Industry & Energy (MOTIE, Korea).
+            <hr>
         </div>
     </div>
 
 
 
 
-    <hr>
-
-    <hr>
     <script>
         // $(".flip-card").click(function() {
         //     console.log("flipping")
