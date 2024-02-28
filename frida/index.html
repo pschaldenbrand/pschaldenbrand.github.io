@@ -10,26 +10,15 @@
     <title>FRIDA</title>
     <link rel="icon" href="assets/favicon.ico">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+	<!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112528477-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        try {
-            gtag('js', new Date());
+        gtag('js', new Date());
 
-            gtag('config', 'UA-112528477-1');
-
-            function check_ga() {
-                if (typeof ga === 'function') {
-                    // Google Analytics tracking
-                    ga('create', 'UA-112528477-1');
-                } else {
-                    setTimeout(check_ga,500);
-                }
-            }
-            check_ga();
-        } catch(err) { console.log(err); }
+        gtag('config', 'UA-112528477-1');
     </script>
     <style>
     body {
