@@ -1,10 +1,12 @@
 body {
 	/*min-width: 800px;
 	min-height: 700px;*/
-	letter-spacing: 1px;
-    color: #FFF !important;
-    text-shadow: 0px 0px 20px #000 !important;
+	/* letter-spacing: 1px; */
+    color: #111 !important;
+    text-shadow: 0px 0px 20px #FFF !important;
     background-color: hsl(214, 32%, 22%);
+
+	font-family: Raleway !important;
 }
 
 @font-face {
@@ -27,14 +29,18 @@ canvas.background {
     text-align: center;
 }
 .description h1 {
-    color: #fff;
+    color: #111;
 }
 .description p {
-    color: #fff;
+    color: #111;
     font-size: 1.3rem;
     line-height: 1.5;
 }
-
+#pete-img {
+	border: 8px white solid;
+    border-radius: 1rem;
+    filter: drop-shadow(20px 20px 30px #FFF);
+}
 .peter-section {
     display: none;
     overflow: hidden !important;
@@ -51,30 +57,54 @@ canvas.background {
 .peter-section a {
     text-decoration: underline !important;
     cursor: pointer;
-    color: #fff !important;
+    color: #111 !important;
+}
+.conference {
+	font-weight: 500;
+	font-size: 1.2rem;
+}
+.authors {
+	font-size: 1.3rem;
+    font-weight: 300;
+}
+.links {
+	margin-top:1rem;
+}
+.links a {
+	margin-right: 0.25rem;
 }
 
-#projects .row, #publications .row {
+#projects .row, #publications .row, #experience .row, #education .row, #personal .row{
     margin-bottom: 1em;
+	background-color: #ffffffe8;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.25rem;
+	padding:1rem;
 }
 
-.subheading {
-    color: #c1c2c3;
+.icon {
+	height:1.5rem !important;
+	width:auto !important;
+	background: None !important;
 }
 
+.card {
+	padding: 1rem;
+}
 
 .linkButton {
 	background-color: #0000;
 	display: inline-block;
     padding: 0.5em;
 	border: solid 1px #fff;
-	color: #fff;
+	color: #111;
 	cursor: pointer;
     margin-right: 1em;
 }
 .linkButton:hover {
 	transition: all 800ms ease-in-out;
-	background-color: rgba(35,35,35,.85);
+	background-color: rgba(255,255,255,.85);
 }
 @media (max-width: 900px) {
     .linkButton  {
@@ -84,7 +114,7 @@ canvas.background {
 }
 
 .clicked {
-	background-color: rgba(35,35,35,.85);
+	background-color: rgba(255,255,255,.85);
 }
 
 .nonButtonLink {

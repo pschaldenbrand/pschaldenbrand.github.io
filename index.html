@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<script src="js/lib/jquery-1.7.1.min.js"></script>
 	<script src="js/peter.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200..800&display=swap" rel="stylesheet">
+
+
 	<title>Peter Schaldenbrand</title>
 	<link rel="icon" href="images/icon.png">
 
@@ -26,7 +32,7 @@
     <img id="background-river" src="images/river.png" style="position:fixed;z-index:-4;width:200vh;bottom:0%;opacity:.8;left:0px;"/>
     <img id="background-clouds" src="images/clouds.png" style="position:fixed;z-index:-5;width:200vh;bottom:0%;opacity:.7;right:0px;"/>
     <canvas id="backgroundCanvas" class="background"></canvas>
-    <div style="position:fixed;z-index:-1;width:100vw;left:0px;height:100vh;background-color:#1a1a1a61;top:0;"/></div>
+    <div style="position:fixed;z-index:-1;width:100vw;left:0px;height:100vh;background-color:#ffffff22;top:0;"/></div>
 
 	<div class="description">
 		<h1>Peter Schaldenbrand</h1>
@@ -65,6 +71,26 @@
             <!-- <div class="row">
                 <div class="h2">Conference Papers</div>
             </div> -->
+
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                    <video class="img-fluid" loop  autoplay muted>
+                        <source src="./cofrida/assets/teaser.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="col-sm-9">
+                    <h3>CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting</h3>
+                    <div class="authors">Peter Schaldenbrand, Gaurav Parmar, Jun-Yan Zhu, James McCann, Jean Oh</div>
+                    <div class="conference">ICRA 2024</div>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2402.13442" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                        <a href="https://github.com/pschaldenbrand/Frida" target="_blank"><img src="./images/github.svg" class="icon"/></a>
+                        <a href="https://pschaldenbrand.github.io/cofrida/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
                     <video data-testid="cinemagraph" src="https://vp.nyt.com/video/2023/05/01/108102_1_02SCI-MIND-PAINTBOT-vid1_wg_480p.mp4" class="img-fluid cinemagraph_video css-gvnats" muted="" loop="" autoplay="" playsinline=""></video>
@@ -72,18 +98,32 @@
                 </div>
                 <div class="col-sm-9">
                     <h3>FRIDA: A Collaborative Robot Painter with a Differentiable, Real2Sim2Real Planning Environment</h3>
-                    <div>ICRA 2023 <b>Finalist for Oustanding Deployed Systems Paper</b></div>
-                    <a href="https://arxiv.org/abs/2210.00664" target="_blank">ArXiv Preprint</a>
-                    <a href="https://pschaldenbrand.github.io/frida/" target="_blank">Project Page</a>
-                    <a href="https://github.com/pschaldenbrand/Frida" target="_blank">GitHub</a>
-                    <div>Peter Schaldenbrand, James McCann, Jean Oh</div>
-                    <div>
-
+                    <div class="authors">Peter Schaldenbrand, James McCann, Jean Oh</div>
+                    <div class="conference">ICRA 2023 <b><span style="color: #d90000;">Finalist for Oustanding Deployed Systems Paper</span></b></div>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2210.00664" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                        <a href="https://github.com/pschaldenbrand/Frida" target="_blank"><img src="./images/github.svg" class="icon"/></a>
+                        <a href="https://pschaldenbrand.github.io/frida/" target="_blank">Project Page</a>
+                        <a href="https://www.nytimes.com/2023/05/02/science/ai-creativity-paintbot.html" target="_blank"><img src="./images/NewYorkTimes.svg" class="icon"/></a>
+                        
                     </div>
                 </div>
             </div>
-
-
+            
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                    <img src="images/scoft.jpeg" class="img-fluid" />
+                </div>
+                <div class="col-sm-9">
+                    <h3>SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation</h3>
+                    <div class="authors">Zhixuan Liu, Peter Schaldenbrand, Beverley-Claire Okogwu, Wenxuan Peng, Youngsik Yun, Andrew Hundt, Jihie Kim, Jean Oh</div>
+                    <div class="conference">CVPR 2024</div>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2401.08053" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                        <a href="https://ariannaliu.github.io/SCoFT/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
             
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
@@ -91,27 +131,10 @@
                 </div>
                 <div class="col-sm-9">
                     <h3>Robot Synesthesia: A Sound and Emotion Guided AI Painter</h3>
-                    <div>AAAI workshop on Creative AI Across Modalities 2023</div>
-                    <a href="https://arxiv.org/abs/2302.04850" target="_blank">ArXiv Preprint</a>
-                    <div>Vihaan Misra, Peter Schaldenbrand, Jean Oh</div>
-                    <div>
-
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
-                    <img src="images/m3c_front_img2.png" class="img-fluid" />
-                </div>
-                <div class="col-sm-9">
-                    <h3>Towards Equitable Representation in Text-to-Image Synthesis Models with the Cross-Cultural Understanding Benchmark (CCUB) Dataset</h3>
-                    <div>AAAI workshop on Creative AI Across Modalities 2023</div>
-                    <a href="https://arxiv.org/abs/2301.12073" target="_blank">ArXiv Preprint</a>
-                    <div>Zhixuan Liu, Youeun Shin, Beverley-Claire Okogwu, Youngsik Yun, Lia Coleman, Peter Schaldenbrand, Jihie Kim, Jean Oh</div>
-                    <div>
-
+                    <div class="authors">Vihaan Misra, Peter Schaldenbrand, Jean Oh</div>
+                    <div class="conference">AAAI workshop on Creative AI Across Modalities 2023</div>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2302.04850" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
                     </div>
                 </div>
             </div>
@@ -120,14 +143,20 @@
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/styleclipdraw_main_example.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>StyleCLIPDraw: Coupling Content and Style in Text-to-Drawing Translation</h3>
+                    <div class="authors">Peter Schaldenbrand, <a href="https://ariannaliu.github.io/" target="_blank">Zhixuan Liu</a>, and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
                     <div>The 2022 International Joint Conference on Artificial Intelligence</div>
-                    <div>The 2021 NeurIPS Workshop on Machine Learning for Creativity and Design</div>
-                    <a href="https://slideslive.com/38970834/styleclipdraw-coupling-content-and-style-in-texttodrawing-synthesis?ref=account-folder-92044-folders" target="_blank">Accepted for Oral Presentation</a>
-                    <a href="https://arxiv.org/abs/2202.12362" target="_blank">arXiv</a>
-                    <a href="https://github.com/pschaldenbrand/StyleCLIPDraw" target="_blank">Github</a>
-                    <a href="https://www.youtube.com/watch?v=5xzcIzHm8Wo" target="_blank">What's AI on YouTube</a>
-                    <div>Peter Schaldenbrand, <a href="https://ariannaliu.github.io/" target="_blank">Zhixuan Liu</a>, and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
-                    <div>StyleCLIPDraw is a text-to-drawing synthesis model with artistic control via a given style image and content control via a language description.</div>
+                    <div class="conference">
+                        The 2021 NeurIPS Workshop on Machine Learning for Creativity and Design
+                        <b><span style="color: #d90000;">Oral</span></b>
+                    </div>
+                    
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2202.12362" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                        <a href="https://github.com/pschaldenbrand/StyleCLIPDraw" target="_blank"><img src="./images/github.svg" class="icon"/></a>
+                        <a href="https://slideslive.com/38970834/styleclipdraw-coupling-content-and-style-in-texttodrawing-synthesis?ref=account-folder-92044-folders" target="_blank">Oral Presentation</a>
+                        <a href="https://www.youtube.com/watch?v=5xzcIzHm8Wo" target="_blank">What's AI on YouTube</a>
+                    </div>
+                    <!-- <div>StyleCLIPDraw is a text-to-drawing synthesis model with artistic control via a given style image and content control via a language description.</div> -->
                 </div>
             </div>
 
@@ -137,14 +166,14 @@
                 </div>
                 <div class="col-sm-9">
                     <h3>Towards Real-Time Text2Video via CLIP-Guided, Pixel-Level Optimization</h3>
-                    <div>NeurIPS Workshop on Creativity and Design 2022</div>
-                    <a href="https://arxiv.org/abs/2210.12826" target="_blank">ArXiv Preprint</a>
-                    <a href="https://pschaldenbrand.github.io/text2video/" target="_blank">Project Page</a>
-                    <a href="https://replicate.com/pschaldenbrand/text2video" target="_blank">Demo</a>
-                    <a href="https://github.com/pschaldenbrand/Text2Video" target="_blank">GitHub</a>
-                    <div>Peter Schaldenbrand, Zhixuan Liu, Jean Oh</div>
-                    <div>
-
+                    <div class="authors">Peter Schaldenbrand, Zhixuan Liu, Jean Oh</div>
+                    <div class="conference">NeurIPS Workshop on Creativity and Design 2022</div>
+                    
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2210.12826" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                        <a href="https://github.com/pschaldenbrand/Text2Video" target="_blank"><img src="./images/github.svg" class="icon"/></a>
+                        <a href="https://pschaldenbrand.github.io/text2video/" target="_blank">Project Page</a>
+                        <a href="https://replicate.com/pschaldenbrand/text2video" target="_blank">Demo</a>
                     </div>
                 </div>
             </div>
@@ -170,40 +199,40 @@
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/ours_vs_baseline.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>Content Masked Loss: Human-Like Brush Stroke Planning in a Reinforcement Learning Painting Agent.</h3>
-                    <div>AAAI'21</div>
-                    <a href="https://arxiv.org/abs/2012.10043" target="_blank">arXiv pre-print</a>
-                    <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
-                    <div>Novel approach to increasing the human-like planning of a reinforcement learning model.</div>
+                    <div class="authors">Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
+                    <div class="conference">AAAI'21</div>
+                    <a href="https://arxiv.org/abs/2012.10043" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                    <!-- <div>Novel approach to increasing the human-like planning of a reinforcement learning model.</div> -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/coolin_painted.gif" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>Machine Traditional Animation: AniPainter</h3>
+                    <div class="authors">Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
                     <!-- <a onclick='displayPdf("resources/Robot_Animator.pdf")'>Paper</a> -->
                     <a href="https://sites.gatech.edu/robotic-art-workshop/2021/07/02/anipainter/" target="_blank">
                         Presented at a Workshop at RSS
                     </a>
                     <a href="https://github.com/pschaldenbrand/AniPainter" target="_blank">Website</a>
-                    <div>Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
-                    <div>Using an affordable robot arm to "hand" paint animation frames.</div>
+                    <!-- <div>Using an affordable robot arm to "hand" paint animation frames.</div> -->
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/tomato_rendered.jpg" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>PyPainterly</h3>
                     <a href="https://github.com/pschaldenbrand/PyPainterly" target="_blank">Website</a>
                     <div>Aaron Hertzmann's algorithm for stroke-based rendering in Python.</div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/edtech_to_resources3.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>Computer-Supported Human Mentoring for Personalized and Equitable Math Learning</h3>
-                    <div>2021 Conf. on Artificial Intelligence in Education (AIED21)</div>
+                    <div class="conference">2021 Conf. on Artificial Intelligence in Education (AIED21)</div>
                     <a onclick='displayPdf("resources/pl2_aied_2021.pdf")'>Paper</a>
-                    <div>
+                    <div class="authors">
                         Peter Schaldenbrand,
                         <a href="https://sites.google.com/view/nikkilobczowski" target="_blank">Nikki G. Lobczowski</a>,
                         <a href="https://sites.google.com/site/jelizabethrichey/home" target="_blank">J. Elizabeth Richey</a>,
@@ -219,10 +248,10 @@
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/doer_effect.png" class="img-fluid" /></div>
                 <div class="col-sm-9">
                     <h3>Is the Doer Effect Robust Across Multiple Data Sets?</h3>
-                    <div>11th Conf. on Educational Data Mining</div>
+                    <div class="conference">11th Conf. on Educational Data Mining</div>
                     <!--<a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank">Paper</a>-->
                     <a onclick='displayPdf("resources/EDM2018_paper_129.pdf")'>Paper</a>
-                    <div><a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a>, <a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, and Peter Schaldenbrand</div>
+                    <div class="authors"><a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a>, <a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, and Peter Schaldenbrand</div>
                     <div>Establishing the causal effect between active resources in an educational environment and learning.</div>
                 </div>
             </div>
@@ -242,9 +271,9 @@
                 <div class="col-sm-9">
                     <h3>CVPR'21 Workshop on Bridging the Gap between Subjective and Computational Measurements of Machine Creativity</h3>
                     <h4>Organizer</h4>
-                    <div>The 2021 Conference on Computer Vision and Pattern Recognition</div>
+                    <div class="conference">The 2021 Conference on Computer Vision and Pattern Recognition</div>
                     <a href="http://cmmc-cvpr21.com/" target="_blank">Website</a>
-                    <div>
+                    <div class="authors">
                         <a href="https://sites.rutgers.edu/ahmed-elgammal/" target="_blank">Ahmed Elgammal (Rutgers)</a>
                         <a href="https://www.cs.ubc.ca/~hyejuj/" target="_blank">Hyeju Jang (U. British Columbia)</a>
                         <a href="http://kangeunsu.com/" target="_blank">Eunsu Kang</a>
@@ -261,10 +290,10 @@
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/siggraph2021.jpg" class="img-fluid" /></div>
                 <div class="col-sm-9">
-                    <h3>SIGGRAPH'21 Workshop on Measurable Creative AI</h3>
+                    <h3 class="conference">SIGGRAPH'21 Workshop on Measurable Creative AI</h3>
                     <h4>Organizer</h4>
                     <!-- <a href="http://cmmc-cvpr21.com/" target="_blank">Website</a> -->
-                    <div>
+                    <div class="authors">
                         <a href="https://sites.rutgers.edu/ahmed-elgammal/" target="_blank">Ahmed Elgammal (Rutgers)</a>
                         <a href="https://www.cs.ubc.ca/~hyejuj/" target="_blank">Hyeju Jang (U. British Columbia)</a>
                         <a href="http://kangeunsu.com/" target="_blank">Eunsu Kang</a>
@@ -281,10 +310,10 @@
             <div class="row">
                 <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/rss.png" class="img-fluid" style="background:none;" /></div>
                 <div class="col-sm-9">
-                    <h3>RSS'21 Robotics x Arts Exhibition: Opportunities and Issues in Robotics Applied in the Arts</h3>
+                    <h3 class="conference">RSS'21 Robotics x Arts Exhibition: Opportunities and Issues in Robotics Applied in the Arts</h3>
                     <h4>Invited Artist</h4><a href="https://sites.gatech.edu/robotic-art-workshop/2021/07/02/anipainter/" target="_blank">AniPainter</a>
                     <!-- <a href="http://cmmc-cvpr21.com/" target="_blank">Website</a> -->
-                    <div>
+                    <div class="authors">
                         Sang Leigh (Georgia Tech),
                         Jean Oh (CMU),
                         Frank Dellaert (GT),
@@ -301,9 +330,9 @@
                 <div class="col-sm-9">
                     <h3>Causal Discovery with Tetrad in LearnSphere’s Tigris</h3>
                     <h4>Organizer</h4>
-                    <div>12th Conf. on Educational Data Mining</div>
+                    <div class="conference">12th Conf. on Educational Data Mining</div>
                     <a onclick='displayPdf("resources/EDM_2019_paper_4.pdf")'>Paper</a>
-                    <div><a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, Peter Schaldenbrand, and <a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a></div>
+                    <div class="authors"><a href="https://www.cmu.edu/dietrich/philosophy/people/faculty/scheines.html" target="_blank">Richard Scheines</a>, Peter Schaldenbrand, and <a href="http://pact.cs.cmu.edu/koedinger.html" target="_blank">Kenneth Koedinger</a></div>
                 </div>
             </div>
         </div>
@@ -399,12 +428,18 @@
 
 		<div class="peter-section" id="about">
             <div class="row">
-                <div class="col-xl-3 col-md-4 col-9 mx-auto">
-                    <img src="https://static01.nyt.com/images/2023/05/02/multimedia/02SCI-MIND-PAINTBOT-03-hcvf/02SCI-MIND-PAINTBOT-03-hcvf-superJumbo.jpg?auto=webp&quality=90" class="img-fluid shadow" />
+                <div class="col-xl-3 col-md-4 col-9 mx-auto mb-4">
+                    <img id="pete-img" src="https://static01.nyt.com/images/2023/05/02/multimedia/02SCI-MIND-PAINTBOT-03-hcvf/02SCI-MIND-PAINTBOT-03-hcvf-superJumbo.jpg?auto=webp&quality=90" class="img-fluid shadow" />
                 </div>
-                <div class="col-md-8 col-xl-9">
-                    I am a PhD student at Carnegie Mellon University's Robotics Institute advised by Dr. Jean Oh.
-                    My research goal is to lower the barriers that people face in performing acts of creativity such as painting, composing music, or creating video content by supporting creative expression with artificial intelligence.  In particular, I am creating AI tools that generate visual content using elementary skills such as language and decisions as input.  Such tools can enable people with a lack of mobility or cognitive impairments to engage in creative expression and art therapy using the skills and abilities that they do have.
+                <div class="col-md-8 col-xl-9 my-auto">
+                    <div class="card" style="text-align: justify;">
+                        I am a PhD student at Carnegie Mellon University's Robotics Institute advised by Dr. Jean Oh.
+                        My research goal is to lower the barriers that people face in performing acts of creativity such as painting, 
+                        composing music, or creating video content by supporting creative expression with artificial intelligence.  
+                        In particular, I am creating AI tools that generate visual content using elementary skills such as language 
+                        and decisions as input.  Such tools can enable people with a lack of mobility or cognitive impairments 
+                        to engage in creative expression and art as therapy using the skills and abilities that they do have.
+                    </div>
                 </div>
                 <!-- <div class="col-md-8 col-xl-9">
                     I am a graduate student and technical staff member of Carnegie Mellon University's Human-Computer Interaction Institute.
@@ -423,8 +458,9 @@
             </div>
             <div class="row" style="padding:2rem;">
                 <div class="col-lg-8 mx-auto" style="max-height:40rem;overflow-y:scroll;">
-                    <a class="twitter-timeline" href="https://twitter.com/PeteyRobots?ref_src=twsrc%5Etfw">Tweets by PeteyRobots</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <!-- <a class="twitter-timeline" href="https://twitter.com/PeteyRobots?ref_src=twsrc%5Etfw">Tweets by PeteyRobots</a> -->
+                    <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+                    <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/PeteyRobots?ref_src=twsrc%5Etfw">Tweets by PeteyRobots</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
 		</div>
@@ -437,24 +473,22 @@
 
                 </div>
                 <div class="col-sm-3">2017 &#8212; July 2021</div>
-            </div>
-            <div class="row">
                 <div class="col-sm-12">
                     <div>
                         <a href="http://personalizedlearning2.org/" target="_blank">Personalized Learning&sup2;</a>
-                        <div>
+                        <div style="text-align: justify;">
                             Full-stack, lead developer on the Personalized Learning&sup2; project; addressing the opportunity gap for marginalized students.  Created an interface for teachers and mentors at public schools in the Pittsburgh region to view data from their students’ usage of multiple Math tutoring software and access resources to intervene on students’ motivational and cognitive obstacles.  Gave input on the designing of the tool and managed multiple design interns throughout its development process.
                         </div>
                     </div>
 
                     <div class="mt-2">
                         <a href="http://learnsphere.org/" target="_blank">Learnsphere Tigris</a>
-                        <div>
+                        <div style="text-align: justify;">
                             Contributed improvements in full stack development to LearnSphere’s Tigris: An online workflow tool for analyzing, visualizing, and mining educational data
                         </div>
                     </div>
 
-                    <div class="mt-2">
+                    <div class="mt-2" style="text-align: justify;">
                         Presented and taught at workshops and CMU courses.  Created videos to teach the software tools I contributed to.
                     </div>
                 </div>
@@ -539,11 +573,6 @@
                 </div>
             </div>
 
-            <div class="row mb-4">
-                <div class="col-sm-12">
-
-                </div>
-            </div>
 		</div>
 	</div>
 
