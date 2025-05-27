@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
 
 	<title>Peter Schaldenbrand</title>
@@ -28,9 +29,18 @@
 </head>
 
 <body>
-    <img id="background-image" src="images/pgh2.png" style="position:fixed;z-index:-2;width:200vh;bottom:3%;opacity:.9;left:0px;"/>
+    <!-- <img id="background-image" src="images/pgh2.png" style="position:fixed;z-index:-2;width:200vh;bottom:3%;opacity:.9;left:0px;"/> -->
     <img id="background-river" src="images/river.png" style="position:fixed;z-index:-4;width:200vh;bottom:0%;opacity:.8;left:0px;"/>
-    <img id="background-clouds" src="images/clouds.png" style="position:fixed;z-index:-5;width:200vh;bottom:0%;opacity:.7;right:0px;"/>
+    <!-- <img id="background-clouds" src="images/clouds.png" style="position:fixed;z-index:-5;width:200vh;bottom:0%;opacity:.7;right:0px;"/> -->
+
+    <div class="slider-container" style="z-index: -2;">
+        <img src="images/pgh2.png" alt="Sliding Image" class="sliding-image-left" style="height:100vh;">
+    </div>
+    <div class="slider-container" style="z-index: -5;">
+        <img src="images/clouds.png" alt="Sliding Image" class="sliding-image-right" style="width:200vh;">
+    </div>
+    <div style="position:fixed;height:100vh;width:100vw;background-color: #7e9fc9; opacity:0.2;z-index: -2;top:0"></div>
+
     <canvas id="backgroundCanvas" class="background"></canvas>
     <div style="position:fixed;z-index:-1;width:100vw;left:0px;height:100vh;background-color:#ffffff22;top:0;"/></div>
 
@@ -73,13 +83,13 @@
             </div> -->
 
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
                     <video class="img-fluid" loop  autoplay muted>
                         <source src="./cofrida/assets/teaser.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-lg-7">
                     <h3>CoFRIDA: Self-Supervised Fine-Tuning for Human-Robot Co-Painting</h3>
                     <div class="authors">Peter Schaldenbrand, Gaurav Parmar, Jun-Yan Zhu, James McCann, Jean Oh</div>
                     <div class="conference">ICRA 2024 <b><span style="color: #d90000;">Best Paper on Human-Robot Interaction</span></b></div>
@@ -93,26 +103,53 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                <!-- <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
                     <img src="images/robot_synesthesia.png" class="img-fluid" />
+                </div> -->
+                
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
+                    <video class="img-fluid" loop  autoplay muted>
+                        <source src="./images/robot_synesthesia.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <div class="col-sm-9">
+                <div class="col-lg-7">
                     <h3>Robot Synesthesia: A Sound and Emotion Guided AI Painter</h3>
                     <div class="authors">Vihaan Misra, Peter Schaldenbrand, Jean Oh</div>
-                    <div class="conference">IROS 2024 <b><span style="color: #d90000;">Nominated for Best Entertainment and Amusement Paper</span></b></div>
+                    <div class="conference">IROS 2024 <b><span style="color: #d90000;">Best Entertainment and Amusement Paper</span></b></div>
                     <div class="conference">AAAI workshop on Creative AI Across Modalities 2023</div>
                     <div class="links">
                         <a href="https://arxiv.org/abs/2302.04850" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                        <a href="https://vihaanmisra.github.io/Robot-Synesthesia/" target="_blank">Project Page</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
+                    <video class="img-fluid" loop  autoplay muted>
+                        <source src="./images/spline-frida.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="col-lg-7">
+                    <h3>Spline-FRIDA: Towards Diverse, Humanlike Robot Painting Styles with a Sample-Efficient, Differentiable Brush Stroke Model</h3>
+                    <div class="authors">Lawrence Chen, Peter Schaldenbrand, Tanmay Shankar, Lia Coleman, Jean Oh</div>
+                    <div class="conference">RA-L 2025</div>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2412.00597" target="_blank"><img src='./images/arxiv.svg' class="icon"/></a>
+                        <a href="https://lawrencedchen.com/splinefrida/" target="_blank">Project Page</a>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
                     <video data-testid="cinemagraph" src="https://vp.nyt.com/video/2023/05/01/108102_1_02SCI-MIND-PAINTBOT-vid1_wg_480p.mp4" class="img-fluid cinemagraph_video css-gvnats" muted="" loop="" autoplay="" playsinline=""></video>
                     <!-- <img src="frida/assets/timelapse.gif" class="img-fluid" /> -->
                 </div>
-                <div class="col-sm-9">
+                <div class="col-lg-7">
                     <h3>FRIDA: A Collaborative Robot Painter with a Differentiable, Real2Sim2Real Planning Environment</h3>
                     <div class="authors">Peter Schaldenbrand, James McCann, Jean Oh</div>
                     <div class="conference">ICRA 2023 <b><span style="color: #d90000;">Finalist for Outstanding Deployed Systems Paper</span></b></div>
@@ -127,10 +164,10 @@
             </div>
             
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
-                    <img src="images/scoft.jpg" class="img-fluid" />
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
+                    <img src="images/scoft.jpg" class="img-fluid" style="max-height: 20rem; width: auto;" />
                 </div>
-                <div class="col-sm-9">
+                <div class="col-lg-7">
                     <h3>SCoFT: Self-Contrastive Fine-Tuning for Equitable Image Generation</h3>
                     <div class="authors">Zhixuan Liu, Peter Schaldenbrand, Beverley-Claire Okogwu, Wenxuan Peng, Youngsik Yun, Andrew Hundt, Jihie Kim, Jean Oh</div>
                     <div class="conference">CVPR 2024</div>
@@ -143,8 +180,8 @@
             
 
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/styleclipdraw_main_example.png" class="img-fluid" /></div>
-                <div class="col-sm-9">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2"><img src="images/styleclipdraw_main_example.png" class="img-fluid" /></div>
+                <div class="col-lg-7">
                     <h3>StyleCLIPDraw: Coupling Content and Style in Text-to-Drawing Translation</h3>
                     <div class="authors">Peter Schaldenbrand, <a href="https://ariannaliu.github.io/" target="_blank">Zhixuan Liu</a>, and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
                     <div class="conference">The 2022 International Joint Conference on Artificial Intelligence</div>
@@ -164,10 +201,10 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
                     <img src="images/t2v.gif" class="img-fluid" />
                 </div>
-                <div class="col-sm-9">
+                <div class="col-lg-7">
                     <h3>Towards Real-Time Text2Video via CLIP-Guided, Pixel-Level Optimization</h3>
                     <div class="authors">Peter Schaldenbrand, Zhixuan Liu, Jean Oh</div>
                     <div class="conference">NeurIPS Workshop on Creativity and Design 2022</div>
@@ -182,11 +219,11 @@
             </div>
 
             <!-- <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2">
                     <img src="images/frida.jpg" class="img-fluid" />
                     <img src="images/frida_paintings.png" class="img-fluid" style="background:none;" />
                 </div>
-                <div class="col-sm-9">
+                <div class="col-lg-7">
                     <h3>Frida: A Narrative Robot Painter with Versatile Styles</h3>
                     <div>Robot Exhibition at the 2022 International Joint Conference on Artificial Intelligence</div>
                     <a href="https://www.youtube.com/watch?v=AjprPa0k4Lc" target="_blank">YouTube</a>
@@ -199,8 +236,8 @@
                 </div>
             </div> -->
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/ours_vs_baseline.png" class="img-fluid" /></div>
-                <div class="col-sm-9">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2"><img src="images/ours_vs_baseline.png" class="img-fluid" /></div>
+                <div class="col-lg-7">
                     <h3>Content Masked Loss: Human-Like Brush Stroke Planning in a Reinforcement Learning Painting Agent.</h3>
                     <div class="authors">Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
                     <div class="conference">AAAI'21</div>
@@ -209,8 +246,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/coolin_painted.gif" class="img-fluid" /></div>
-                <div class="col-sm-9">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2"><img src="images/coolin_painted.gif" class="img-fluid" /></div>
+                <div class="col-lg-7">
                     <h3>Machine Traditional Animation: AniPainter</h3>
                     <div class="authors">Peter Schaldenbrand and <a href="https://www.cs.cmu.edu/~./jeanoh/" target="_blank">Jean Oh</a></div>
                     <!-- <a onclick='displayPdf("resources/Robot_Animator.pdf")'>Paper</a> -->
@@ -222,16 +259,16 @@
                 </div>
             </div>
             <!-- <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/tomato_rendered.jpg" class="img-fluid" /></div>
-                <div class="col-sm-9">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2"><img src="images/tomato_rendered.jpg" class="img-fluid" /></div>
+                <div class="col-lg-7">
                     <h3>PyPainterly</h3>
                     <a href="https://github.com/pschaldenbrand/PyPainterly" target="_blank">Website</a>
                     <div>Aaron Hertzmann's algorithm for stroke-based rendering in Python.</div>
                 </div>
             </div> -->
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/edtech_to_resources3.png" class="img-fluid" /></div>
-                <div class="col-sm-9">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2"><img src="images/edtech_to_resources3.png" class="img-fluid" /></div>
+                <div class="col-lg-7">
                     <h3>Computer-Supported Human Mentoring for Personalized and Equitable Math Learning</h3>
                     <div class="conference">2021 Conf. on Artificial Intelligence in Education (AIED21)</div>
                     <a onclick='displayPdf("resources/pl2_aied_2021.pdf")'>Paper</a>
@@ -248,8 +285,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/doer_effect.png" class="img-fluid" /></div>
-                <div class="col-sm-9">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2"><img src="images/doer_effect.png" class="img-fluid" /></div>
+                <div class="col-lg-7">
                     <h3>Is the Doer Effect Robust Across Multiple Data Sets?</h3>
                     <div class="conference">11th Conf. on Educational Data Mining</div>
                     <!--<a href="http://educationaldatamining.org/files/conferences/EDM2018/papers/EDM2018_paper_129.pdf" target="_blank">Paper</a>-->
@@ -259,8 +296,8 @@
                 </div>
             </div>
             <!-- <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/styled_video.gif" class="img-fluid" /></div>
-                <div class="col-sm-9">
+                <div class="col-sm-10 col-md-9 col-lg-5 mt-2"><img src="images/styled_video.gif" class="img-fluid" /></div>
+                <div class="col-lg-7">
                     <h3>Video Style Transfer</h3>
                     <a href="https://github.com/pschaldenbrand/STROTSS-Video" target="_blank">Website</a>
                     <div>Video style transfer using Style Transfer by Relaxed Optimal Transport and Self-Similarity.</div>
@@ -311,7 +348,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/rss.png" class="img-fluid" style="background:none;" /></div>
+                <div class="col-sm-10 col-md-9 col-lg-3 mt-2"><img src="images/rss.png" class="img-fluid" style="background-color: #737373; padding:10px;" /></div>
                 <div class="col-sm-9">
                     <h3 class="conference">RSS'21 Robotics x Arts Exhibition: Opportunities and Issues in Robotics Applied in the Arts</h3>
                     <h4>Invited Artist</h4><a href="https://sites.gatech.edu/robotic-art-workshop/2021/07/02/anipainter/" target="_blank">AniPainter</a>
@@ -436,6 +473,7 @@
                 </div>
                 <div class="col-md-8 col-xl-9 my-auto">
                     <div class="card" style="text-align: justify;">
+                        <p><b>I will be in the faculty job market for Fall 2026</b></p>
                         I am a PhD candidate at Carnegie Mellon University's Robotics Institute advised by Professor Jean Oh.
                         My research goal is to lower the barriers that people face in performing real-world acts of creativity such as painting or sculpting by creating new tools for artists using AI and Robotics. 
                         I am particularly interested in the challenges of generating content in the real world, e.g., creating images with a few painted brush strokes versus generating pixels on a computer screen. 
@@ -448,8 +486,16 @@
                         <center><h4>News</h4></center>
                         <ul>
                             <li>
+                                <span class="news-date">[May 2025]</span>
+                                <a href="https://www.linkedin.com/in/yejin-kim-robotics/" target="_blank">Yejin Kim</a>, Jean Oh, and I won the best collaboration award at the ICRA'25 Arts in Robotics session
+                            </li>
+                            <li>
+                                <span class="news-date">[March 2025]</span>
+                                Our paper, <a href="https://ieeexplore.ieee.org/abstract/document/10971931" target="_blank">Spline-FRIDA</a>, was accepted to RA-L
+                            </li>
+                            <li>
                                 <span class="news-date">[October 2024]</span>
-                                <a href="https://arxiv.org/abs/2302.04850" target="_blank">Robot Synesthesia</a> was <b>nominated for Best Entertainment and Amusment Paper</b> at IROS 2024
+                                <a href="https://arxiv.org/abs/2302.04850" target="_blank">Robot Synesthesia</a> won <b>Best Entertainment and Amusment Paper</b> at IROS 2024
                             </li>
                             <li>
                                 <span class="news-date">[September 2024]</span>
@@ -597,7 +643,7 @@
 
             <div class="row mb-4">
                 <div class="col-12 col-lg-8">
-                    <h3 class="mb-2">Action</h3>
+                    <!-- <h3 class="mb-2">Action</h3> -->
                     <h5 class="subheading mb-2">Volleyball</h5>
                     <div>
                         High school and college experience <br/>
@@ -606,7 +652,7 @@
                     <h5 class="subheading mb-2 mt-2">Biking</h5>
                     <div>You'll catch me outside on my bike as soon as the warm weather hits.  I use it to find the best rock skipping spots in Western PA.</div>
 
-                    <h3 class="mb-2">Music</h3>
+                    <h5 class="subheading mb-2">Music</h5>
                     <div>
                         Guitar, Saxophone, Bagpipes, Synthesizer in what small free time I find
                     </div>
@@ -633,16 +679,17 @@
 	<script>
 		var backgroundColor = 214;
 		$(document).ready(function() {
-			setInterval(function() {
-            // setTimeout(function() {
-				// $('body').css('background-color',
-				// 		'hsl('+(backgroundColor++)%360+', 32%, 22%)');
+			// setInterval(function() {
+            // // setTimeout(function() {
+			// 	// $('body').css('background-color',
+			// 	// 		'hsl('+(backgroundColor++)%360+', 32%, 22%)');
 
-                $('body').css('background-color',
-                        'hsl('+(backgroundColor++)%360+', 62%, 42%)');
+            //     $('body').css('background-color',
+            //             'hsl('+(backgroundColor++)%360+', 62%, 42%)');
 
-			},300);
+			// },300);
 
+            /*
             pghGoingRight = true;
             goingTime = 500000;
             setInterval(function() {
@@ -668,7 +715,7 @@
             }, goingTime + 1000);
             jQuery('#background-clouds').animate({left:0}, goingTime, 'linear');
             cloudsGoingRight = !cloudsGoingRight;
-
+            */
 
             setTimeout(function() {
                 let hash = window.location.hash.replace('.html','');

@@ -4,9 +4,10 @@ body {
 	/* letter-spacing: 1px; */
     color: #111 !important;
     text-shadow: 0px 0px 20px #FFF !important;
-    background-color: hsl(214, 32%, 22%);
+    /* background-color: hsl(214, 32%, 22%); */
+	background-color: #6495c5 !important; 
 
-	font-family: Raleway !important;
+	font-family: Lora !important;
 }
 
 @font-face {
@@ -54,6 +55,16 @@ canvas.background {
     width: 100%;
 }
 
+.peter-section img, .peter-section video {
+	box-shadow:
+		0 0 10px 10px rgba(255, 255, 255, 1),    /* Inner-most, slightly brighter */
+		0 0 20px rgba(255, 255, 255, 0.5),   /* Middle, more spread out */
+		0 0 30px rgba(255, 255, 255, 0.1);
+}
+img.icon {
+    box-shadow: none;
+}
+
 .peter-section a {
     text-decoration: underline !important;
     cursor: pointer;
@@ -61,11 +72,12 @@ canvas.background {
 }
 .conference {
 	font-weight: 500;
-	font-size: 1.2rem;
+	/* font-size: 1.2rem; */
 }
 .authors {
-	font-size: 1.3rem;
+	/* font-size: 1.1rem; */
     font-weight: 300;
+	margin-bottom: 0.5rem;
 }
 .links {
 	margin-top:1rem;
@@ -82,6 +94,7 @@ canvas.background {
     border-radius: 0.25rem;
 	padding:1rem;
 }
+
 
 .icon {
 	height:1.5rem !important;
@@ -101,6 +114,7 @@ canvas.background {
 	color: #111;
 	cursor: pointer;
     margin-right: 1em;
+	font-family: Raleway !important
 }
 .linkButton:hover {
 	transition: all 800ms ease-in-out;
@@ -173,4 +187,48 @@ canvas.background {
 }
 #news .news-date {
 	color:#000000AA
+}
+
+
+.slider-container {
+	width: 200vh; /* Or a specific width */
+	overflow: hidden; /* Hides the part of the image outside the container */
+	position: fixed; /* Needed for absolute positioning of the image */
+	height: 100%; /* Set a height for your container, adjust as needed */
+	border: 1px solid #ccc; /* Just for visualization */
+	
+	top:0;
+}
+  
+.sliding-image-right {
+	position: absolute;
+	left: 50%; /* Start the image completely to the left (outside the container) */
+	animation: slideInRight 60s linear infinite; /* Animation name, duration, and fill-mode */
+	/* If you want it to loop: animation: slideIn 5s infinite alternate; */
+}
+
+@keyframes slideInRight {
+	0% {
+	  left: -15%; /* Start from outside the left */
+	}
+	100% {
+	  left: 15%; /* End at the left edge of the container */
+	}
+}
+
+  
+.sliding-image-left {
+	position: absolute;
+	left: 50%; /* Start the image completely to the left (outside the container) */
+	animation: slideInLeft 60s linear infinite; /* Animation name, duration, and fill-mode */
+	/* If you want it to loop: animation: slideIn 5s infinite alternate; */
+}
+
+@keyframes slideInLeft {
+	0% {
+	  left: 0%; /* Start from outside the left */
+	}
+	100% {
+	  left: -50%; /* End at the left edge of the container */
+	}
 }
