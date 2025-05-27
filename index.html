@@ -28,7 +28,7 @@
     </script>
 </head>
 
-<body>
+<body style="width:100vw;">
     <!-- <img id="background-image" src="images/pgh2.png" style="position:fixed;z-index:-2;width:200vh;bottom:3%;opacity:.9;left:0px;"/> -->
     <img id="background-river" src="images/river.png" style="position:fixed;z-index:-4;width:200vh;bottom:0%;opacity:.8;left:0px;"/>
     <!-- <img id="background-clouds" src="images/clouds.png" style="position:fixed;z-index:-5;width:200vh;bottom:0%;opacity:.7;right:0px;"/> -->
@@ -45,12 +45,22 @@
     <div style="position:fixed;z-index:-1;width:100vw;left:0px;height:100vh;background-color:#ffffff22;top:0;"/></div>
 
 	<div class="description">
-		<h1>Peter Schaldenbrand</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-sm-10 mx-auto" id="description-col">
+                    <!-- <div>
+                        <img src="./images/cloud2.png" style="position: fixed; left: -40%; z-index:-5; top:-10vw; width:150%;    opacity: 0.8;" />
+                    </div> -->
+                    <img src="./images/cloud2.png" style="position: fixed; left: 46%; z-index:-5; top:10%; width:57rem;    opacity: 0.8; transform: translate(-50%, -50%);" class="sliding-image-a-little" />
+                    <h1>Peter Schaldenbrand</h1>
 
-		<div> PhD Candidate </div>
-        <div></div>
-		<div>Robotics Institute | Carnegie Mellon University</div>
-        <div>pschalde at andrew dot cmu dot edu</div>
+                    <div> PhD Candidate </div>
+                    <div></div>
+                    <div>Robotics Institute | Carnegie Mellon University</div>
+                    <div>pschalde at andrew dot cmu dot edu</div>
+                </div>
+            </div>
+        </div>
 
         <p />
 
@@ -473,7 +483,7 @@
                 </div>
                 <div class="col-md-8 col-xl-9 my-auto">
                     <div class="card" style="text-align: justify;">
-                        <p><b>I will be in the faculty job market for Fall 2026</b></p>
+                        <p><b>I am applying for tenure-track professor positions for Fall 2026 start.</b></p>
                         I am a PhD candidate at Carnegie Mellon University's Robotics Institute advised by Professor Jean Oh.
                         My research goal is to lower the barriers that people face in performing real-world acts of creativity such as painting or sculpting by creating new tools for artists using AI and Robotics. 
                         I am particularly interested in the challenges of generating content in the real world, e.g., creating images with a few painted brush strokes versus generating pixels on a computer screen. 

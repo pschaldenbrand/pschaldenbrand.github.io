@@ -40,7 +40,7 @@ canvas.background {
 #pete-img {
 	border: 8px white solid;
     border-radius: 1rem;
-    filter: drop-shadow(20px 20px 30px #FFF);
+    filter: drop-shadow(1vw 1vw 2vw #FFF)
 }
 .peter-section {
     display: none;
@@ -203,7 +203,7 @@ img.icon {
 .sliding-image-right {
 	position: absolute;
 	left: 50%; /* Start the image completely to the left (outside the container) */
-	animation: slideInRight 60s linear infinite; /* Animation name, duration, and fill-mode */
+	animation: slideInRight 500s linear  infinite alternate; /* Animation name, duration, and fill-mode */
 	/* If you want it to loop: animation: slideIn 5s infinite alternate; */
 }
 
@@ -220,7 +220,7 @@ img.icon {
 .sliding-image-left {
 	position: absolute;
 	left: 50%; /* Start the image completely to the left (outside the container) */
-	animation: slideInLeft 60s linear infinite; /* Animation name, duration, and fill-mode */
+	animation: slideInLeft 500s linear infinite alternate; /* Animation name, duration, and fill-mode */
 	/* If you want it to loop: animation: slideIn 5s infinite alternate; */
 }
 
@@ -230,5 +230,22 @@ img.icon {
 	}
 	100% {
 	  left: -50%; /* End at the left edge of the container */
+	}
+}
+
+
+.sliding-image-a-little {
+	position: absolute;
+	left: 50%; /* Start the image completely to the left (outside the container) */
+	animation: slideALittle 10s ease-in-out  infinite alternate; /* Animation name, duration, and fill-mode */
+	/* If you want it to loop: animation: slideIn 5s infinite alternate; */
+}
+
+@keyframes slideALittle {
+	0% {
+	  left: 46%; /* Start from outside the left */
+	}
+	100% {
+	  left: 41%; /* End at the left edge of the container */
 	}
 }
